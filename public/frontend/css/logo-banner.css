@@ -1,0 +1,23 @@
+/* Logo Banner Styles */
+.logo-banner {
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-lightness-green);
+    padding: 15px 0;
+    text-align: center;
+}
+
+.logo-banner img {
+    max-height: 120px;
+    transition: transform 0.3s ease;
+}
+
+.logo-banner img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .logo-banner img {
+        max-height: 80px;
+    }
+}

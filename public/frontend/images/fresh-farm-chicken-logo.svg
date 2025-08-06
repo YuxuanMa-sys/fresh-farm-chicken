@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#ffffff"/>
+  
+  <!-- Green rolling hills -->
+  <ellipse cx="200" cy="220" rx="180" ry="40" fill="#4a7c59"/>
+  <ellipse cx="200" cy="225" rx="160" ry="35" fill="#5a8c69"/>
+  <ellipse cx="200" cy="230" rx="140" ry="30" fill="#6a9c79"/>
+  
+  <!-- Field lines on hills -->
+  <path d="M 60 210 Q 120 205 180 210 Q 240 215 320 210" stroke="#3a6c49" stroke-width="2" fill="none"/>
+  <path d="M 80 220 Q 140 215 200 220 Q 260 225 340 220" stroke="#3a6c49" stroke-width="2" fill="none"/>
+  <path d="M 100 230 Q 160 225 220 230 Q 280 235 360 230" stroke="#3a6c49" stroke-width="2" fill="none"/>
+  
+  <!-- Sun rays -->
+  <g stroke="#f4d03f" stroke-width="3" stroke-linecap="round">
+    <line x1="260" y1="50" x2="270" y2="30"/>
+    <line x1="280" y1="60" x2="295" y2="45"/>
+    <line x1="300" y1="80" x2="320" y2="75"/>
+    <line x1="240" y1="60" x2="225" y2="45"/>
+    <line x1="250" y1="40" x2="245" y2="20"/>
+  </g>
+  
+  <!-- Farm house -->
+  <rect x="320" y="170" width="35" height="30" fill="#8b4513"/>
+  <polygon points="320,170 337.5,150 355,170" fill="#a0522d"/>
+  <rect x="330" y="185" width="8" height="15" fill="#654321"/>
+  <rect x="342" y="175" width="6" height="6" fill="#87ceeb"/>
+  
+  <!-- Chicken body -->
+  <ellipse cx="180" cy="180" rx="45" ry="35" fill="#d2691e"/>
+  <ellipse cx="180" cy="180" rx="40" ry="30" fill="#daa520"/>
+  
+  <!-- Chicken wing -->
+  <ellipse cx="160" cy="170" rx="20" ry="15" fill="#cd853f" transform="rotate(-20 160 170)"/>
+  <path d="M 145 165 Q 155 160 165 165 Q 170 170 165 175 Q 155 180 145 175 Z" fill="#8b4513"/>
+  
+  <!-- Chicken tail feathers -->
+  <ellipse cx="135" cy="175" rx="15" ry="25" fill="#8b4513" transform="rotate(-30 135 175)"/>
+  <ellipse cx="140" cy="170" rx="12" ry="20" fill="#a0522d" transform="rotate(-20 140 170)"/>
+  
+  <!-- Chicken neck -->
+  <ellipse cx="200" cy="155" rx="18" ry="25" fill="#daa520"/>
+  
+  <!-- Chicken head -->
+  <circle cx="210" cy="135" r="22" fill="#daa520"/>
+  
+  <!-- Chicken beak -->
+  <polygon points="230,135 245,140 235,145" fill="#ff8c00"/>
+  
+  <!-- Chicken eye -->
+  <circle cx="220" cy="130" r="4" fill="#000"/>
+  <circle cx="222" cy="128" r="1.5" fill="#fff"/>
+  
+  <!-- Chicken comb -->
+  <path d="M 200 115 Q 205 105 210 115 Q 215 105 220 115 Q 225 105 230 115 Q 225 120 220 125 Q 215 120 210 125 Q 205 120 200 125 Z" fill="#dc143c"/>
+  
+  <!-- Chicken wattle -->
+  <ellipse cx="225" cy="145" rx="4" ry="8" fill="#dc143c"/>
+  
+  <!-- Chicken legs -->
+  <rect x="175" y="210" width="3" height="15" fill="#ff8c00"/>
+  <rect x="185" y="210" width="3" height="15" fill="#ff8c00"/>
+  
+  <!-- Chicken feet -->
+  <path d="M 170 225 L 175 230 M 175 225 L 180 230 M 180 225 L 185 230" stroke="#ff8c00" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 180 225 L 185 230 M 185 225 L 190 230 M 190 225 L 195 230" stroke="#ff8c00" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Company text -->
+  <text x="200" y="270" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#2d5016">FRESH FARM</text>
+  <text x="200" y="295" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#2d5016">CHICKEN</text>
+</svg>

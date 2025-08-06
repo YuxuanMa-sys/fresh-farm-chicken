@@ -1,0 +1,67 @@
+/* Custom CSS for FAQ page */
+.faq-content {
+    padding: 30px 0;
+}
+
+.accordion-item {
+    margin-bottom: 15px;
+    border: 1px solid var(--color-gray-400);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    background-color: var(--color-white);
+}
+
+.accordion-button {
+    padding: 15px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--color-black);
+    background-color: var(--color-white);
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--theme-color);
+    background-color: var(--color-lightness-green);
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: var(--color-gray-400);
+}
+
+/* Remove default Bootstrap accordion arrow */
+.accordion-button::after {
+    display: none;
+}
+
+/* Custom accordion icon */
+.accordion-icon {
+    transition: transform 0.3s ease;
+}
+
+.accordion-body {
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.inner-section {
+    padding: 60px 0;
+}
+
+@media (max-width: 767px) {
+    .accordion-button {
+        font-size: 15px;
+        padding: 12px 15px;
+    }
+    
+    .accordion-body {
+        padding: 15px;
+    }
+    
+    .inner-section {
+        padding: 40px 0;
+    }
+}

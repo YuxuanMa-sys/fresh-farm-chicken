@@ -1,0 +1,10 @@
+<!-- Fresh Farm Chicken Logo Banner -->
+	<div class="logo-banner">
+		<div class="container">
+			<a href="{{ url('/') }}">
+				<img src="{{ asset('frontend/images/fresh-farm-chicken-logo.svg') }}" alt="Fresh Farm Chicken">
+			</a>
+		</div>
+	</div>
+	
+	<header class="header">
