@@ -88,16 +88,18 @@
 					</div>
 					<div class="col-lg-4">
 						<ul class="head-round-icon">
-							<li>
-								<a href="{{ route('frontend.wishlist') }}">
-									<i class="bi bi-heart"></i>{{ __('Wishlist') }}
-									<span class="cart_count count_wishlist">0</span>
+							<li class="wishlist-item">
+								<a href="{{ route('frontend.wishlist') }}" title="{{ __('View Wishlist') }}" aria-label="{{ __('Wishlist') }}">
+									<i class="bi bi-heart"></i>
+									<span class="wishlist-text">{{ __('Wishlist') }}</span>
+									<span class="cart_count count_wishlist" aria-label="{{ __('Wishlist items') }}">0</span>
 								</a>
 							</li>
 							<li class="shopingCart">
-								<a href="javascript:void(0);" class="CartShowHide">
-									<i class="bi bi-cart"></i>{{ __('Cart') }}
-									<span class="cart_count total_qty">0</span>
+								<a href="javascript:void(0);" class="CartShowHide" title="{{ __('View Cart') }}" aria-label="{{ __('Shopping Cart') }}">
+									<i class="bi bi-cart"></i>
+									<span class="cart-text">{{ __('Cart') }}</span>
+									<span class="cart_count total_qty" aria-label="{{ __('Cart items') }}">0</span>
 								</a>
 								<div class="shoping-cart-card headerShopingCart">
 									<div class="empty_card has_item_empty">
@@ -152,16 +154,18 @@
 							</div>
 							<div class="head-round-card">
 								<ul class="head-round-icon">
-									<li>
-										<a href="{{ route('frontend.wishlist') }}">
+									<li class="wishlist-item">
+										<a href="{{ route('frontend.wishlist') }}" title="{{ __('View Wishlist') }}" aria-label="{{ __('Wishlist') }}">
 											<i class="bi bi-heart"></i>
-											<span class="cart_count count_wishlist">0</span>
+											<span class="wishlist-text">{{ __('Wishlist') }}</span>
+											<span class="cart_count count_wishlist" aria-label="{{ __('Wishlist items') }}">0</span>
 										</a>
 									</li>
 									<li class="shopingCart">
-										<a href="javascript:void(0);" class="CartShowHide">
+										<a href="javascript:void(0);" class="CartShowHide" title="{{ __('View Cart') }}" aria-label="{{ __('Shopping Cart') }}">
 											<i class="bi bi-cart"></i>
-											<span class="cart_count total_qty">0</span>
+											<span class="cart-text">{{ __('Cart') }}</span>
+											<span class="cart_count total_qty" aria-label="{{ __('Cart items') }}">0</span>
 										</a>
 										<div class="shoping-cart-card headerShopingCart">
 											

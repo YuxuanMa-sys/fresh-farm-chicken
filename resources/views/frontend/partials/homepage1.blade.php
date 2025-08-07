@@ -30,7 +30,13 @@
 									@endif
 									
 									@if($aRow->button_text != '')
-									<a href="{{ $row->url }}" class="btn theme-btn" {{ $aRow->target =='' ? '' : "target=".$aRow->target }}>{{ $aRow->button_text }}</a>
+									@php
+										$buttonUrl = $row->url;
+										if (strtolower($aRow->button_text) === 'shop now' || strtolower($aRow->button_text) === 'order now') {
+											$buttonUrl = route('frontend.product-category', [8, 'fresh-meat-poultry']);
+										}
+									@endphp
+									<a href="{{ $buttonUrl }}" class="btn theme-btn" {{ $aRow->target =='' ? '' : "target=".$aRow->target }}>{{ $aRow->button_text }}</a>
 									@endif
 									
 									@if($aRow->layer_image_1 != '')
