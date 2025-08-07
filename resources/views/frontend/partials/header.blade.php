@@ -58,17 +58,17 @@
 		</div><!--/Top Header/-->
 		
 		<!--Desktop Header-->
-		<div class="header-desktop" style="padding-top: 0px; padding-bottom: 0px;">
+		<div class="header-desktop" style="padding-bottom:10px!important;">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3">
-						<div class="logo">
+						<div class="logo" style="margin-left:30px!important;">
 							<a href="{{ url('/') }}">
-								<img src="{{ asset('media/logo.png') }}" alt="logo">
+								<img src="{{ asset('media/logo1.png') }}" alt="logo">
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-5" style="padding-top: 61px;padding-bottom: 61px;">
+					<div class="col-lg-5">
 						<form method="GET" action="{{ route('frontend.search') }}">
 							<div class="search-card">
 								<div class="search-box">
@@ -86,7 +86,7 @@
 							</div>
 						</form>
 					</div>
-					<div class="col-lg-4" style="padding-top: 61px;padding-bottom: 61px;">
+					<div class="col-lg-4">
 						<ul class="head-round-icon">
 							<li>
 								<a href="{{ route('frontend.wishlist') }}">
@@ -202,6 +202,11 @@
 							<div class="tp-menu align-self-center">
 								<nav>
 									<ul class="main-menu">
+										<li class="nav-logo">
+											<a href="{{ url('/') }}">
+												<img src="{{ asset('media/logo2.png') }}" alt="logo2" class="nav-logo-img">
+											</a>
+										</li>
 										@php echo HeaderMenuList('HeaderMenuListForDesktop'); @endphp
 									</ul>
 								</nav>

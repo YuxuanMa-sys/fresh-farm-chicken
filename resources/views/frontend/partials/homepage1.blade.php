@@ -2,15 +2,27 @@
 <!-- Home Slider -->
 	@if($section1->is_publish == 1)
 	<section class="slider-section">
-		<div class="slider-screen h1-height" style="background-image: url({{ $section1->image ? asset('media/'.$section1->image) : '' }});">
+		<div class="slider-screen h1-height" style="padding-top: 0px !important; padding-bottom: 0px !important;">
 			<div class="home-slider owl-carousel">
 				@foreach ($slider as $row)
 				@php $aRow = json_decode($row->desc); @endphp
 				<!-- Slider Item -->
-				<div class="single-slider">
+				<div class="single-slider" style="background-image: url({{ $row->image ? asset('media/'.$row->image) : '' }});">
 					<div class="container">
 						<div class="row">
-							<div class="order-1 col-sm-12 order-sm-1 col-md-6 order-md-0 col-lg-5 order-lg-0">
+							<div class="col-sm-12 col-md-4 col-lg-5">
+								@if($aRow->layer_image_2 != '')
+								<div class="h1-layer3 layer-bounce3">
+									<img src="{{ asset('media/'.$aRow->layer_image_2) }}" alt="{{ $row->title }}" />
+								</div>
+								@endif
+								@if($aRow->layer_image_3 != '')
+								<div class="h1-layer4 layer-bounce4">
+									<img src="{{ asset('media/'.$aRow->layer_image_3) }}" alt="{{ $row->title }}" />
+								</div>
+								@endif
+							</div>
+							<div class="col-sm-12 col-md-8 col-lg-7">
 								<div class="slider-content">
 									<h1>{{ $row->title }}</h1>
 									@if($aRow->sub_title != '')
@@ -27,21 +39,6 @@
 									</div>
 									@endif
 								</div>
-							</div>
-							<div class="order-0 col-sm-12 order-sm-0 col-md-6 order-md-1 col-lg-7 order-lg-1">
-								@if($aRow->layer_image_2 != '')
-								<div class="h1-layer3 layer-bounce3">
-									<img src="{{ asset('media/'.$aRow->layer_image_2) }}" alt="{{ $row->title }}" />
-								</div>
-								@endif
-								<div class="h1-layer1 layer-bounce1">
-									<img src="{{ asset('media/'.$row->image) }}" alt="{{ $row->title }}" />
-								</div>
-								@if($aRow->layer_image_3 != '')
-								<div class="h1-layer4 layer-bounce4">
-									<img src="{{ asset('media/'.$aRow->layer_image_3) }}" alt="{{ $row->title }}" />
-								</div>
-								@endif
 							</div>
 						</div>
 					</div>
@@ -207,35 +204,7 @@
 	</section>
 	<!-- /Why Choose Us/ -->
 	
-	<!-- About Us Section -->
-	<section class="about-us-section" style="padding-top: 20px !important; padding-bottom: 20px !important;">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="about-content">
-						<h1>Our Story</h1>
-						<div class="about-text">
-							<p>When I moved to Pakistan, I quickly realized how hard it was to find truly clean, healthy chicken. Most options in the market were full of antibiotics or raised in unhealthy conditions. I knew there had to be a better way.</p>
-							<p>So I started raising a few chickens on our farmhouse, just for personal use. No antibiotics, no hormones, just clean feed, open space, and real care. Friends and family loved the taste and kept asking for more. That's how this small idea turned into something bigger.</p>
-							<p>Today, we raise all our chickens with the same values: honesty, health, and freshness. We believe food should be trustworthy, and we're proud to bring that to your table.</p>
-						</div>
-						<div class="about-cta">
-							<a href="{{ route('frontend.page', [48, 'about-us']) }}" class="btn btn-light">Learn More</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="about-video">
-						<video autoplay muted loop playsinline>
-							<source src="{{ asset('media/our_story.mp4') }}" type="video/mp4">
-							Your browser does not support the video tag.
-						</video>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- /About Us Section/ -->
+
 	
 
 	
@@ -595,6 +564,36 @@
 		</div>
 	</section>
 	<!-- /Testimonials Section/ -->
+
+		<!-- About Us Section -->
+		<section class="about-us-section" style="padding-top: 10px !important; padding-bottom: 10px !important;">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="about-content">
+						<h1>Our Story</h1>
+						<div class="about-text">
+							<p>When I moved to Pakistan, I quickly realized how hard it was to find truly clean, healthy chicken. Most options in the market were full of antibiotics or raised in unhealthy conditions. I knew there had to be a better way.</p>
+							<p>So I started raising a few chickens on our farmhouse, just for personal use. No antibiotics, no hormones, just clean feed, open space, and real care. Friends and family loved the taste and kept asking for more. That's how this small idea turned into something bigger.</p>
+							<p>Today, we raise all our chickens with the same values: honesty, health, and freshness. We believe food should be trustworthy, and we're proud to bring that to your table.</p>
+						</div>
+						<div class="about-cta">
+							<a href="{{ route('frontend.page', [48, 'about-us']) }}" class="btn btn-light">Learn More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="about-video">
+						<video autoplay muted loop playsinline>
+							<source src="{{ asset('media/our_story.mp4') }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /About Us Section/ -->
 	
 	<!-- Video Section -->
 	<!-- @if($home_video['is_publish'] == 1)

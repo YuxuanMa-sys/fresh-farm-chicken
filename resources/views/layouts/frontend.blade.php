@@ -83,37 +83,75 @@
 	<link href="{{asset('frontend/css/jquery.gritter.min.css')}}" rel="stylesheet">
 
 	<style type="text/css">
+	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 	:root {
-	  --theme-color: {{ $gtext['theme_color'] }};
-	  --color-green: {{ $gtext['green_color'] }};
-	  --color-light-green: {{ $gtext['light_green_color'] }};
-	  --color-lightness-green: {{ $gtext['lightness_green_color'] }};
-	  --color-gray: {{ $gtext['gray_color'] }};
-	  --color-gray-dark: {{ $gtext['dark_gray_color'] }};
-	  --color-gray-400: {{ $gtext['light_gray_color'] }};
-	  --color-black: {{ $gtext['black_color'] }};
-	  --color-white: {{ $gtext['white_color'] }};
+	  /* Modern Organic Color Palette */
+	  --theme-color: #2D5A27; /* Deep Forest Green - Primary brand color */
+	  --color-green: #4A7C59; /* Sage Green - Secondary brand color */
+	  --color-light-green: #E8F5E8; /* Light Sage - Background accents */
+	  --color-lightness-green: #F7FBF7; /* Very Light Sage - Page backgrounds */
+	  --color-gray: #6B7280; /* Modern Gray - Text and borders */
+	  --color-gray-dark: #374151; /* Dark Gray - Headings */
+	  --color-gray-400: #E5E7EB; /* Light Gray - Input borders */
+	  --color-black: #111827; /* Rich Black - Primary text */
+	  --color-white: #FFFFFF; /* Pure White */
 	  
-	  --primary-font-family: 'Roboto', sans-serif;
-	  --secondary-font-family: 'Spartan', sans-serif;
+	  /* Additional Organic Colors */
+	  --color-earth-brown: #8B4513; /* Earth Brown - Accent color */
+	  --color-warm-beige: #F5F5DC; /* Warm Beige - Background */
+	  --color-cream: #FFF8DC; /* Cream - Light backgrounds */
+	  --color-forest-dark: #1B4332; /* Dark Forest - Dark accents */
+	  --color-sage-light: #9CAF88; /* Light Sage - Muted accents */
+	  
+	  /* Modern Typography */
+	  --primary-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	  --secondary-font-family: 'Playfair Display', Georgia, serif;
 	  --arabic-font-family: 'Noto Kufi Arabic', sans-serif;
-	  --font-size-100: 14px;
-	  --font-size-200: 16px;
-	  --font-size-300: 18px;
-	  --font-size-400: 20px;
-	  --font-size-500: 25px;
-	  --font-size-600: 30px;
-	  --font-size-700: 35px;
-	  --font-size-800: 40px;
-	  --font-size-900: 65px;
-	  --heading-1: 40px;
-	  --heading-2: 35px;
-	  --heading-3: 28px;
-	  --heading-4: 22px;
-	  --heading-5: 18px;
-	  --heading-6: 16px;
-	  --line-height-100: 1;
-	  --line-height-200: 1.5;
+	  
+	  /* Font Sizes - Modern Scale */
+	  --font-size-100: 14px; /* Base body text */
+	  --font-size-200: 16px; /* Larger body text */
+	  --font-size-300: 18px; /* Subheadings */
+	  --font-size-400: 20px; /* Small headings */
+	  --font-size-500: 24px; /* Medium headings */
+	  --font-size-600: 30px; /* Large headings */
+	  --font-size-700: 36px; /* Extra large headings */
+	  --font-size-800: 48px; /* Hero headings */
+	  --font-size-900: 64px; /* Display headings */
+	  
+	  /* Heading Sizes */
+	  --heading-1: 48px; /* Main page headings */
+	  --heading-2: 36px; /* Section headings */
+	  --heading-3: 30px; /* Subsection headings */
+	  --heading-4: 24px; /* Card headings */
+	  --heading-5: 20px; /* Small headings */
+	  --heading-6: 18px; /* Micro headings */
+	  
+	  /* Line Heights */
+	  --line-height-100: 1.2; /* Tight spacing for headings */
+	  --line-height-200: 1.6; /* Comfortable reading for body text */
+	  
+	  /* Spacing System */
+	  --spacing-xs: 4px;
+	  --spacing-sm: 8px;
+	  --spacing-md: 16px;
+	  --spacing-lg: 24px;
+	  --spacing-xl: 32px;
+	  --spacing-2xl: 48px;
+	  --spacing-3xl: 64px;
+	  
+	  /* Border Radius */
+	  --border-radius-sm: 4px;
+	  --border-radius-md: 8px;
+	  --border-radius-lg: 12px;
+	  --border-radius-xl: 16px;
+	  --border-radius-full: 9999px;
+	  
+	  /* Shadows */
+	  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+	  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 	}
 	</style>
 	<link href="{{asset('frontend/css/style.css')}}" rel="stylesheet">
@@ -220,16 +258,6 @@
 	</script>
 	<script src="{{ asset('frontend/js/scripts.js')}}"></script>
 	<script src="{{asset('frontend/pages/cart.js')}}"></script>
-	<div class="custom-popup light width-100 dnone" id="lightCustomModal">
-		<div class="padding-md">
-			<h4 class="m-top-none"></h4>
-		</div>
-		<div class="text-center">
-			<a href="javascript:void(0);" class="btn blue-btn lightCustomModal_close mr-10" onClick="onConfirm()">{{ __('Confirm') }}</a>
-			<a href="javascript:void(0);" class="btn danger-btn lightCustomModal_close">{{ __('Cancel') }}</a>
-		</div>
-	</div>
-	<a href="#lightCustomModal" class="btn btn-warning btn-small lightCustomModal_open dnone">{{ __('Edit') }}</a>
 	@stack('scripts')
 	@if($gtext['custom_js'] != '')
 	<script>

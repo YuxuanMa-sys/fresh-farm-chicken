@@ -57,8 +57,20 @@
 
 /* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
-	ul.top-list-1 {
+	.top-header {
+		padding: 6px 0;
+	}
+	.top-header ul.top-list-1 {
 		display: none;
+	}
+	.top-header ul.top-list {
+		justify-content: flex-end;
+	}
+	.top-header ul.top-list li {
+		margin-left: 15px;
+	}
+	.top-header ul.top-list li:not(:last-of-type) {
+		padding-right: 15px;
 	}
 	.header-desktop {
 		display: none;
@@ -80,9 +92,11 @@
 	}
 	.slider-screen .slider-content {
 		padding: 50px 0px 0px 0px;
+		max-width: 400px;
 	}
 	.slider-screen .slider-content h1 {
 		font-size: var(--font-size-800);
+		line-height: 1.1;
 	}
 	.slider-screen .h1-layer2 {
 		display: none;
@@ -210,8 +224,26 @@
 
 /* small mobile :320px. */
 @media (max-width: 767px) {
-	ul.top-list-1 {
+	.top-header {
+		padding: 4px 0;
+	}
+	.top-header ul.top-list-1 {
 		display: none;
+	}
+	.top-header ul.top-list {
+		justify-content: flex-end;
+		flex-wrap: wrap;
+	}
+	.top-header ul.top-list li {
+		margin-left: 10px;
+		font-size: 12px;
+	}
+	.top-header ul.top-list li:not(:last-of-type) {
+		padding-right: 10px;
+		border-right: 1px solid rgba(255, 255, 255, 0.2);
+	}
+	.top-header ul.top-list li a {
+		font-size: 12px;
 	}
 	.header-desktop {
 		display: none;

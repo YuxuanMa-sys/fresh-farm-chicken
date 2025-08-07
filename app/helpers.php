@@ -850,15 +850,15 @@ function gtext(){
 		$data['black_color'] = $tcObj->black_color;
 		$data['white_color'] = $tcObj->white_color;
 	}else{
-		$data['theme_color'] = '#61a402';
-		$data['green_color'] = '#65971e';
-		$data['light_green_color'] = '#daeac5';
-		$data['lightness_green_color'] = '#fdfff8';
-		$data['gray_color'] = '#8d949d';
-		$data['dark_gray_color'] = '#595959';
-		$data['light_gray_color'] = '#e7e7e7';
-		$data['black_color'] = '#232424';
-		$data['white_color'] = '#ffffff';
+		$data['theme_color'] = '#2D5A27'; /* Deep Forest Green - Primary brand color */
+		$data['green_color'] = '#4A7C59'; /* Sage Green - Secondary brand color */
+		$data['light_green_color'] = '#E8F5E8'; /* Light Sage - Background accents */
+		$data['lightness_green_color'] = '#F7FBF7'; /* Very Light Sage - Page backgrounds */
+		$data['gray_color'] = '#6B7280'; /* Modern Gray - Text and borders */
+		$data['dark_gray_color'] = '#374151'; /* Dark Gray - Headings */
+		$data['light_gray_color'] = '#E5E7EB'; /* Light Gray - Input borders */
+		$data['black_color'] = '#111827'; /* Rich Black - Primary text */
+		$data['white_color'] = '#FFFFFF'; /* Pure White */
 	}
 	
 	//Mail Settings

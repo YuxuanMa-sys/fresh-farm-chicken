@@ -69,28 +69,28 @@
             <div class="row text-center">
                 <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width: 80px; height: 80px; background-color: var(--color-lightness-green) !important;">
-                        <i class="fas fa-shield-alt fa-2x" style="color: var(--theme-color);"></i>
+                        <i class="bi bi-check-circle" style="color: var(--theme-color); font-size: 2rem;"></i>
                     </div>
                     <h3 class="h4 font-weight-bold mb-2">100% Organic</h3>
                     <p class="text-muted">No antibiotics, hormones, or synthetic chemicals. Just pure, natural goodness.</p>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width: 80px; height: 80px; background-color: var(--color-lightness-green) !important;">
-                        <i class="fas fa-heart fa-2x" style="color: var(--theme-color);"></i>
+                        <i class="bi bi-house-heart" style="color: var(--theme-color); font-size: 2rem;"></i>
                     </div>
                     <h3 class="h4 font-weight-bold mb-2">Ethically Raised</h3>
                     <p class="text-muted">Our hens roam freely on pasture, living happy and healthy lives.</p>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width: 80px; height: 80px; background-color: var(--color-lightness-green) !important;">
-                        <i class="fas fa-truck fa-2x" style="color: var(--theme-color);"></i>
+                        <i class="bi bi-clock" style="color: var(--theme-color); font-size: 2rem;"></i>
                     </div>
                     <h3 class="h4 font-weight-bold mb-2">Fresh Delivery</h3>
                     <p class="text-muted">Farm-to-table freshness delivered directly to your doorstep.</p>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width: 80px; height: 80px; background-color: var(--color-lightness-green) !important;">
-                        <i class="fas fa-award fa-2x" style="color: var(--theme-color);"></i>
+                        <i class="bi bi-star" style="color: var(--theme-color); font-size: 2rem;"></i>
                     </div>
                     <h3 class="h4 font-weight-bold mb-2">Premium Quality</h3>
                     <p class="text-muted">Superior taste and nutrition that you can see and taste in every egg.</p>
