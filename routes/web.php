@@ -22,8 +22,10 @@ Route::get('/', [App\Http\Controllers\Frontend\HomeFrontendController::class, 'h
 
 Route::get('/search', [App\Http\Controllers\Frontend\SearchController::class, 'getSearchData'])->name('frontend.search');
 
+Route::get('/contact', [App\Http\Controllers\Frontend\ContactController::class, 'getSimpleContactPage'])->name('frontend.simple-contact');
 Route::get('/contact/{id}/{title}', [App\Http\Controllers\Frontend\ContactController::class, 'getContactData'])->name('frontend.contact');
 Route::post('/frontend/sentMessage', [App\Http\Controllers\Frontend\ContactController::class, 'sentMessage'])->name('frontend.sentMessage');
+Route::post('/frontend/sentSimpleContactMessage', [App\Http\Controllers\Frontend\ContactController::class, 'sentSimpleContactMessage'])->name('frontend.sentSimpleContactMessage');
 
 Route::get('/page/{id}/{title}', [App\Http\Controllers\Frontend\PageController::class, 'getPage'])->name('frontend.page');
 

@@ -122,7 +122,7 @@
 				<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 col-xl-4 offset-xl-4 col-xxl-4 offset-xxl-4">
 					<div class="empty_card">
 						<div class="empty_img">
-							<img src="{{ asset('public/frontend/images/empty.png') }}" />
+							<img src="{{ asset('frontend/images/empty.png') }}" />
 						</div>
 						<h3>{{ __('Your cart is empty!') }}</h3>
 					</div>

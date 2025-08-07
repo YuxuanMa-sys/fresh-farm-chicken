@@ -26,14 +26,6 @@ class FaqController extends Controller
             [
                 'question' => 'Do you offer home delivery?',
                 'answer' => 'Yes, we deliver directly to your home within our coverage areas.'
-            ],
-            [
-                'question' => 'What is your return policy?',
-                'answer' => 'Customer satisfaction is our priority. If you are not completely satisfied with your order, please contact us within 24 hours of delivery for a full refund or replacement.'
-            ],
-            [
-                'question' => 'How long do your products stay fresh?',
-                'answer' => 'Our farm-fresh products stay fresh for the period indicated on each package when properly refrigerated. We include the production date on each package so you know exactly how fresh your products are.'
             ]
         ];
 

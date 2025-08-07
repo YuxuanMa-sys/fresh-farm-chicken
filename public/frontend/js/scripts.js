@@ -318,19 +318,19 @@
     $( "#slider-range" ).slider({
       range: true,
       min: 0,
-      max: 1000,
-      values: [0, 1000],
+      max: 5000,
+      values: [0, 5000],
       slide: function( event, ui ) {
 		var minPrice = ui.values[0];
 		var maxPrice = ui.values[1];
 		$("#filter_min_price").val(minPrice);
 		$("#filter_max_price").val(maxPrice);
-        $( "#amount" ).text( "$" + minPrice + " - $" + maxPrice);
+        $( "#amount" ).text( "PKR " + minPrice + " - PKR " + maxPrice);
       }
     });
 	var minPrice = $( "#slider-range" ).slider( "values", 0);
 	var maxPrice = $( "#slider-range" ).slider( "values", 1);
-	$( "#amount" ).text("$" +minPrice+ " - $" + maxPrice);
+	$( "#amount" ).text("PKR " +minPrice+ " - PKR " + maxPrice);
 	
 	//Product Setails Slider
 	$('.pd-slider-for').slick({
@@ -408,6 +408,64 @@
 				$('.sub_btn').html(sub_btn);
 			}
 		});
+	});
+	
+	//Testimonials Carousel
+	$('.testimonials-carousel').owlCarousel({
+        navText: ['<i class="bi bi-arrow-left"></i>', '<i class="bi bi-arrow-right"></i>'],
+		rtl: isRTL,
+        loop: true,
+        nav: true,
+		dots: true,
+		margin: 30,
+        mouseDrag: true,
+		responsiveClass:true,
+		smartSpeed: 1000,
+		autoplay: true,
+		autoplayTimeout: 5000,
+		autoplayHoverPause: true,
+		responsive:{
+			0:{
+				items:1,
+				nav: false
+			},
+			600:{
+				items:2,
+				nav: false
+			},
+			1000:{
+				items:3
+			}
+		}
+	});
+	
+	//Farm Gallery Carousel
+	$('.farm-gallery-carousel').owlCarousel({
+        navText: ['<i class="bi bi-arrow-left"></i>', '<i class="bi bi-arrow-right"></i>'],
+		rtl: isRTL,
+        loop: true,
+        nav: true,
+		dots: true,
+		margin: 30,
+        mouseDrag: true,
+		responsiveClass:true,
+		smartSpeed: 1000,
+		autoplay: true,
+		autoplayTimeout: 4000,
+		autoplayHoverPause: true,
+		responsive:{
+			0:{
+				items:1,
+				nav: false
+			},
+			600:{
+				items:2,
+				nav: false
+			},
+			1000:{
+				items:3
+			}
+		}
 	});
 	
 }(jQuery));

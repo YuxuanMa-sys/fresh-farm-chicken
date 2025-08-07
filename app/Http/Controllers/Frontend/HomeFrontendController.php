@@ -224,10 +224,9 @@ class HomeFrontendController extends Controller
 			FROM products a
 			INNER JOIN users b ON a.user_id = b.id AND b.status_id = 1
 			WHERE a.is_publish = 1 
-			AND a.is_featured = 1
+			AND a.id IN (1, 2, 3)
 			AND a.lan = '".$lan."'
-			ORDER BY a.id DESC LIMIT 3;";
-			
+			ORDER BY a.id ASC;";
 			$popular_products = DB::select($pp_sql);
 			for($i=0; $i<count($popular_products); $i++){
 				$Reviews = getReviews($popular_products[$i]->id);
@@ -525,9 +524,9 @@ class HomeFrontendController extends Controller
 			FROM products a
 			INNER JOIN users b ON a.user_id = b.id AND b.status_id = 1
 			WHERE a.is_publish = 1 
-			AND a.is_featured = 1
+			AND a.id IN (1, 2, 3)
 			AND a.lan = '".$lan."'
-			ORDER BY a.id DESC LIMIT 3;";
+			ORDER BY a.id ASC;";
 			
 			$popular_products = DB::select($pp_sql);
 			for($i=0; $i<count($popular_products); $i++){
@@ -826,9 +825,9 @@ class HomeFrontendController extends Controller
 			FROM products a
 			INNER JOIN users b ON a.user_id = b.id AND b.status_id = 1
 			WHERE a.is_publish = 1 
-			AND a.is_featured = 1
+			AND a.id IN (1, 2, 3)
 			AND a.lan = '".$lan."'
-			ORDER BY a.id DESC LIMIT 3;";
+			ORDER BY a.id ASC;";
 			$popular_products = DB::select($pp_sql);
 			for($i=0; $i<count($popular_products); $i++){
 				$Reviews = getReviews($popular_products[$i]->id);
@@ -1127,9 +1126,9 @@ class HomeFrontendController extends Controller
 			FROM products a
 			INNER JOIN users b ON a.user_id = b.id AND b.status_id = 1
 			WHERE a.is_publish = 1 
-			AND a.is_featured = 1
+			AND a.id IN (1, 2, 3)
 			AND a.lan = '".$lan."'
-			ORDER BY a.id DESC LIMIT 3;";
+			ORDER BY a.id ASC;";
 			$popular_products = DB::select($pp_sql);
 			
 			for($i=0; $i<count($popular_products); $i++){

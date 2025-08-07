@@ -1,6 +1,6 @@
 <!-- Footer Top Section -->
 @if($gtext['is_subscribe_footer'] == 1)
-<section class="footer-top" style="background-image: url({{ asset('media/'.$gtext['subscribe_background_image']) }});">
+<!-- <section class="footer-top" style="background-image: url({{ asset('media/'.$gtext['subscribe_background_image']) }});">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 offset-sm-0 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2 col-xxl-6 offset-xxl-3">
@@ -18,7 +18,7 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 @endif
 <!-- /Footer Top Section/ -->
 @php 
@@ -32,12 +32,12 @@ $FooterSection = FooterSection();
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 footer-border">
-					<div class="footer-widget-card">
+					<div class="footer-widget-card" style="padding-top: 30px;">
 						@if($gtext['is_publish_about'] == 1)
 						<div class="footer-widget mb25">
 							<div class="info-card">
 								@if($gtext['about_logo_footer'] != '')
-								<div class="info-logo">
+								<div class="info-logo" style="margin-bottom: 0px;">
 									<img src="{{ asset('media/'.$gtext['about_logo_footer']) }}" alt="" />
 								</div>
 								@endif

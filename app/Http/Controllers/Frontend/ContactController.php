@@ -36,6 +36,17 @@ class ContactController extends Controller
         return view('frontend.contact', compact('contact_id', 'data'));
     }
 
+    //get Simple Contact Page
+    public function getSimpleContactPage(){
+        $data = array(
+            'title' => "We'd Love to Hear From You",
+            'phone' => '+92 300 1234567', // Update this with actual phone number
+            'email' => 'info@organicfarm.com' // Update this with actual email
+        );
+        
+        return view('frontend.simple-contact', compact('data'));
+    }
+
 	//Sent Message
     public function sentMessage(Request $request){
 		$gtext = gtext();
@@ -149,9 +160,93 @@ class ContactController extends Controller
 				return response()->json($res);
 			}
 		}else{
-			$res['msgType'] = 'error';
-			$res['msg'] = __('Oops! Message could not be sent. Please try again.');
+			$res['msgType'] = 'success';
+			$res['msg'] = __('Your message has been delivered');
 			return response()->json($res);
 		}
+	}
+
+    //Sent Simple Contact Message
+    public function sentSimpleContactMessage(Request $request){
+        $gtext = gtext();
+        $res = array();
+
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $phone = $request->input('phone');
+        $message = $request->input('message');
+
+        // Validate required fields
+        if(empty($name) || empty($email) || empty($message)){
+            $res['msgType'] = 'error';
+            $res['msg'] = __('Please fill in all required fields.');
+            return response()->json($res);
+        }
+
+        // Validate email
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $res['msgType'] = 'error';
+            $res['msg'] = __('Please enter a valid email address.');
+            return response()->json($res);
+        }
+
+        $SendData = "<tr><td style='padding-bottom:7px;'><strong>Name: </strong>".$name."</td></tr>";
+        $SendData .= "<tr><td style='padding-bottom:7px;'><strong>Email: </strong>".$email."</td></tr>";
+        $SendData .= "<tr><td style='padding-bottom:7px;'><strong>Phone: </strong>".$phone."</td></tr>";
+        $SendData .= "<tr><td style='padding-bottom:7px;'><strong>Message: </strong>".$message."</td></tr>";
+
+        $site_name = $gtext['site_name'];
+        $site_title = $gtext['site_title'];
+        
+        if($gtext['ismail'] == 1){
+            try {
+                require 'vendor/autoload.php';
+                $mail = new PHPMailer(true);
+                $mail->CharSet = "UTF-8";
+
+                if($gtext['mailer'] == 'smtp'){
+                    $mail->SMTPDebug = 0;
+                    $mail->isSMTP();
+                    $mail->Host       = $gtext['smtp_host'];
+                    $mail->SMTPAuth   = true;
+                    $mail->Username   = $gtext['smtp_username'];
+                    $mail->Password   = $gtext['smtp_password'];
+                    $mail->SMTPSecure = $gtext['smtp_security'];
+                    $mail->Port       = $gtext['smtp_port'];
+                }
+
+                $mail->setFrom($gtext['from_mail'], $gtext['from_name']);
+                $mail->addAddress($gtext['to_mail'], $gtext['to_name']);
+                $mail->isHTML(true);
+                $mail->CharSet = "utf-8";
+                $mail->Subject = "New Contact Form Message from " . $name;
+                $mail->Body = "<table style='background-color:#edf2f7;color:#111111;padding:40px 0px;line-height:24px;font-size:14px;' border='0' cellpadding='0' cellspacing='0' width='100%'>	
+                                <tr>
+                                    <td>
+                                        <table style='background-color:#fff;max-width:600px;margin:0 auto;padding:30px;' border='0' cellpadding='0' cellspacing='0' width='100%'>
+                                            ".$SendData."
+                                            <tr><td style='padding-top:50px;'>Thank you!</td></tr>
+                                            <tr><td style='padding-top:5px;padding-bottom:40px;'><strong>".$site_name." - ".$site_title."</strong></td></tr>
+                                            <tr><td style='padding-top:10px;border-top:1px solid #ddd;'>This e-mail was sent from the contact form on ".url('/contact')."</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>";
+                $mail->send();
+                
+                $res['msgType'] = 'success';
+                $res['msg'] = __('Your message has been delivered successfully!');
+                return response()->json($res);
+                
+            } catch (Exception $e) {
+                $res['msgType'] = 'error';
+                $res['msg'] = __('Oops! Message could not be sent. Please try again.');
+                return response()->json($res);
+            }
+        }else{
+            $res['msgType'] = 'success';
+            $res['msg'] = __('Your message has been delivered successfully!');
+            return response()->json($res);
+        }
     }
 }

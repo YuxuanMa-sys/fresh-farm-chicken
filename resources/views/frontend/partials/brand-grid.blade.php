@@ -1,5 +1,5 @@
 @php $gtext = gtext(); @endphp
-<div class="row">
+<div class="row product-grid-row">
 	@if(count($datalist)>0)
 	@foreach ($datalist as $row)
 		@if(($brand_variation == 'left_sidebar') || ($brand_variation == 'right_sidebar'))

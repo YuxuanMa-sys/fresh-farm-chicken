@@ -58,17 +58,17 @@
 		</div><!--/Top Header/-->
 		
 		<!--Desktop Header-->
-		<div class="header-desktop">
+		<div class="header-desktop" style="padding-top: 0px; padding-bottom: 0px;">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3">
 						<div class="logo">
 							<a href="{{ url('/') }}">
-								<img src="{{ $gtext['front_logo'] ? asset('media/'.$gtext['front_logo']) : asset('public/frontend/images/logo.png') }}" alt="logo">
+								<img src="{{ asset('media/logo.png') }}" alt="logo">
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-5">
+					<div class="col-lg-5" style="padding-top: 61px;padding-bottom: 61px;">
 						<form method="GET" action="{{ route('frontend.search') }}">
 							<div class="search-card">
 								<div class="search-box">
@@ -86,7 +86,7 @@
 							</div>
 						</form>
 					</div>
-					<div class="col-lg-4">
+					<div class="col-lg-4" style="padding-top: 61px;padding-bottom: 61px;">
 						<ul class="head-round-icon">
 							<li>
 								<a href="{{ route('frontend.wishlist') }}">
@@ -102,7 +102,7 @@
 								<div class="shoping-cart-card headerShopingCart">
 									<div class="empty_card has_item_empty">
 										<div class="empty_img">
-											<img src="{{ asset('public/frontend/images/empty.png') }}" />
+											<img src="{{ asset('frontend/images/empty.png') }}" />
 										</div>
 										<h3>{{ __('Your cart is empty!') }}</h3>
 									</div>
@@ -146,7 +146,7 @@
 							<div class="logo-card">
 								<div class="logo">
 									<a href="{{ url('/') }}">
-										<img src="{{ $gtext['front_logo'] ? asset('media/'.$gtext['front_logo']) : asset('public/frontend/images/logo.png') }}" alt="logo">
+										<img src="{{ asset('media/logo.png') }}" alt="logo">
 									</a>
 								</div>
 							</div>
@@ -167,7 +167,7 @@
 											
 											<div class="empty_card has_item_empty">
 												<div class="empty_img">
-													<img src="{{ asset('public/frontend/images/empty.png') }}" />
+													<img src="{{ asset('frontend/images/empty.png') }}" />
 												</div>
 												<h3>{{ __('Your cart is empty!') }}</h3>
 											</div>
@@ -197,18 +197,7 @@
 		<div class="header-menu" id="sticky-menu">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-3">
-						<ul class="categories-wrap">
-							<li>
-								<a class="navCategoryListActive" href="javascript:void(0);">{{ __('Browse Categories') }}</a>
-								<ul class="nav-category-list">
-									@php echo CategoryMenuList(); @endphp
-									<li><a href="javascript:void(0);" class="btn cat-more-btn catMoreBtnActive"><span class="onCatMoreBtn">{{ __('Show More') }}</span></a></li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-					<div class="col-lg-9">
+					<div class="col-lg-12">
 						<div class="tp-mega-full">
 							<div class="tp-menu align-self-center">
 								<nav>
@@ -242,11 +231,6 @@
 			<div class="mobile-navigation">
 				<nav>
 					<ul class="mobile-menu">
-						<li class="has-children-menu"><a href="#">{{ __('Browse Categories') }}</a>
-							<ul class="dropdown">
-								@php echo CategoryListForMobile(); @endphp
-							</ul>
-						</li>
 						@php echo HeaderMenuList('HeaderMenuListForMobile'); @endphp
 					</ul>
 				</nav>

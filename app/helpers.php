@@ -63,7 +63,7 @@ function CategoryMenuList(){
 	
 	$datalist = Pro_category::where('lan', '=', $lan)->where('is_publish', '=', 1)->orderBy('id', 'ASC')->get();
 	$li_List = '';
-	$Path = asset('public/media');
+	$Path = asset('media');
 	$count = 1;
 	foreach($datalist as $row){
 		$id = $row->id;
@@ -136,6 +136,11 @@ function HeaderMenuList($MenuType){
 	$target_window = '';
 	foreach($datalist as $row){
 
+		// Skip brand and blog menu items
+		if($row->menu_type == 'brand' || $row->menu_type == 'blog' || strtolower($row->item_label) == 'brands'){
+			continue;
+		}
+
 		$menu_id = $row->menu_id;
 		$menu_parent_id = $row->id;
 		
@@ -146,6 +151,12 @@ function HeaderMenuList($MenuType){
 			$target_window = ' target="_blank"';
 		}else{
 			$target_window = '';
+		}
+		
+		// Change 'Shop' to 'Products'
+		$item_label = $row->item_label;
+		if(strtolower($item_label) == 'shop'){
+			$item_label = 'Products';
 		}
 		
 		
@@ -163,6 +174,18 @@ function HeaderMenuList($MenuType){
 				$upDownClass = '';
 			}
 			
+			// Remove dropdown for Home menu item
+			if(strtolower($row->item_label) == 'home'){
+				$MegaDropdownMenuList = '';
+				$upDownClass = '';
+			}
+			
+			// Remove dropdown for Products and link to Fresh Meat & Poultry
+			if(strtolower($row->item_label) == 'shop' || strtolower($row->item_label) == 'products'){
+				$MegaDropdownMenuList = '';
+				$upDownClass = '';
+			}
+			
 			if($row->width_type == 'full_width'){
 				$full_width = 'class="tp-static"';
 			}else{
@@ -170,26 +193,30 @@ function HeaderMenuList($MenuType){
 			}
 			
 			if($row->menu_type == 'page'){
-				$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.route('frontend.page', [$item_id, $custom_url]).'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				if(strtolower($row->item_label) == 'home'){
+					$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.route('frontend.home').'">'.$item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				}elseif(strtolower($row->item_label) == 'contact us' || strtolower($row->item_label) == 'contact'){
+					$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.route('frontend.simple-contact').'">'.$item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				}else{
+					$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.route('frontend.page', [$item_id, $custom_url]).'">'.$item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				}
 
-			}elseif($row->menu_type == 'brand'){
-				$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.route('frontend.brand', [$item_id, $custom_url]).'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
-		
 			}elseif($row->menu_type == 'custom_link'){
-				$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.$custom_url.'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				if(strtolower($row->item_label) == 'home'){
+					$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.route('frontend.home').'">'.$item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				}elseif(strtolower($row->item_label) == 'contact us' || strtolower($row->item_label) == 'contact'){
+					$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.route('frontend.simple-contact').'">'.$item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				}elseif(strtolower($row->item_label) == 'shop' || strtolower($row->item_label) == 'products'){
+					$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.route('frontend.product-category', [8, 'fresh-meat-poultry']).'">'.$item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				}else{
+					$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.$custom_url.'">'.$item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				}
 
 			}elseif($row->menu_type == 'product'){
-				$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.route('frontend.product', [$item_id, $custom_url]).'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.route('frontend.product', [$item_id, $custom_url]).'">'.$item_label.'</a>'.$MegaDropdownMenuList.'</li>';
 		
 			}elseif($row->menu_type == 'product_category'){
-				$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.route('frontend.product-category', [$item_id, $custom_url]).'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
-			
-			}elseif($row->menu_type == 'blog'){
-				if($item_id == 0){
-					$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.route('frontend.blog').'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
-				}else{
-					$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.route('frontend.blog-category', [$item_id, $custom_url]).'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
-				}
+				$MenuList .= '<li '.$full_width.'><a'.$upDownClass.$target_window.' href="'.route('frontend.product-category', [$item_id, $custom_url]).'">'.$item_label.'</a>'.$MegaDropdownMenuList.'</li>';
 			}
 			
 		//Menu list for Mobile
@@ -206,27 +233,45 @@ function HeaderMenuList($MenuType){
 				$hasChildrenMenu = '';
 			}
 			
+			// Remove dropdown for Home menu item
+			if(strtolower($row->item_label) == 'home'){
+				$MegaDropdownMenuList = '';
+				$hasChildrenMenu = '';
+			}
+			
+			// Remove dropdown for Products and link to Fresh Meat & Poultry
+			if(strtolower($row->item_label) == 'shop' || strtolower($row->item_label) == 'products'){
+				$MegaDropdownMenuList = '';
+				$hasChildrenMenu = '';
+			}
+			
 			if($row->menu_type == 'page'){
-				$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.route('frontend.page', [$item_id, $custom_url]).'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				if(strtolower($row->item_label) == 'home'){
+					$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.route('frontend.home').'">'.$item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				}elseif(strtolower($row->item_label) == 'contact us' || strtolower($row->item_label) == 'contact'){
+					$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.route('frontend.simple-contact').'">'.$item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				}elseif(strtolower($row->item_label) == 'shop' || strtolower($row->item_label) == 'products'){
+					$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.route('frontend.product-category', [8, 'fresh-meat-poultry']).'">'.$item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				}else{
+					$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.route('frontend.page', [$item_id, $custom_url]).'">'.$item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				}
 
-			}elseif($row->menu_type == 'brand'){
-				$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.route('frontend.brand', [$item_id, $custom_url]).'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
-		
 			}elseif($row->menu_type == 'custom_link'){
-				$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.$row->custom_url.'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				if(strtolower($row->item_label) == 'home'){
+					$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.route('frontend.home').'">'.$item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				}elseif(strtolower($row->item_label) == 'contact us' || strtolower($row->item_label) == 'contact'){
+					$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.route('frontend.simple-contact').'">'.$item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				}elseif(strtolower($row->item_label) == 'shop' || strtolower($row->item_label) == 'products'){
+					$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.route('frontend.product-category', [8, 'fresh-meat-poultry']).'">'.$item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				}else{
+					$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.$row->custom_url.'">'.$item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				}
 
 			}elseif($row->menu_type == 'product'){
-				$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.route('frontend.product', [$item_id, $custom_url]).'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
+				$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.route('frontend.product', [$item_id, $custom_url]).'">'.$item_label.'</a>'.$MegaDropdownMenuList.'</li>';
 		
 			}elseif($row->menu_type == 'product_category'){
-				$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.route('frontend.product-category', [$item_id, $custom_url]).'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
-			
-			}elseif($row->menu_type == 'blog'){
-				if($item_id == 0){
-					$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.route('frontend.blog').'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
-				}else{
-					$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.route('frontend.blog-category', [$item_id, $custom_url]).'">'.$row->item_label.'</a>'.$MegaDropdownMenuList.'</li>';
-				}
+				$MenuList .= '<li '.$hasChildrenMenu.'><a'.$target_window.' href="'.route('frontend.product-category', [$item_id, $custom_url]).'">'.$item_label.'</a>'.$MegaDropdownMenuList.'</li>';
 			}
 		}
 	}
@@ -266,7 +311,7 @@ function makeMegaMenu($menu_id, $menu_parent_id, $width_type, $width, $MenuType)
 			
 			if($row->is_image == 1){
 				if($row->image != ''){
-					$Path = asset('public/media');
+					$Path = asset('media');
 					$imageOrMegaLiList = '<img src="'.$Path.'/'.$row->image.'" />';
 				}else{
 					$imageOrMegaLiList = '';
@@ -448,13 +493,21 @@ function FooterMenuList($MenuType){
 		}
 		
 		if($row->menu_type == 'page'){
-			$li_List .= '<li><a'.$target_window.' href="'.route('frontend.page', [$item_id, $custom_url]).'">'.$row->item_label.'</a></li>';
+			if(strtolower($row->item_label) == 'contact us' || strtolower($row->item_label) == 'contact'){
+				$li_List .= '<li><a'.$target_window.' href="'.route('frontend.simple-contact').'">'.$row->item_label.'</a></li>';
+			}else{
+				$li_List .= '<li><a'.$target_window.' href="'.route('frontend.page', [$item_id, $custom_url]).'">'.$row->item_label.'</a></li>';
+			}
 
 		}elseif($row->menu_type == 'brand'){
 			$li_List .= '<li><a'.$target_window.' href="'.route('frontend.brand', [$item_id, $custom_url]).'">'.$row->item_label.'</a></li>';
 			
 		}elseif($row->menu_type == 'custom_link'){
-			$li_List .= '<li><a'.$target_window.' href="'.$custom_url.'">'.$row->item_label.'</a></li>';
+			if(strtolower($row->item_label) == 'contact us' || strtolower($row->item_label) == 'contact'){
+				$li_List .= '<li><a'.$target_window.' href="'.route('frontend.simple-contact').'">'.$row->item_label.'</a></li>';
+			}else{
+				$li_List .= '<li><a'.$target_window.' href="'.$custom_url.'">'.$row->item_label.'</a></li>';
+			}
 
 		}elseif($row->menu_type == 'product'){
 			$li_List .= '<li><a'.$target_window.' href="'.route('frontend.product', [$item_id, $custom_url]).'">'.$row->item_label.'</a></li>';

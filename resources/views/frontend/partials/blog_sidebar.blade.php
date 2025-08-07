@@ -39,26 +39,4 @@
 			</ul>
 		</div>
 	</div>
-	
-	<div class="widget-card">
-		<div class="widget-title">{{ __('Brands') }}</div>
-		<div class="widget-body">
-			<ul class="widget-list">
-				@php $BrandListForFilter = BrandListForFilter(); @endphp
-				@foreach ($BrandListForFilter as $row)
-				<li>
-					<div class="icon">
-						<a href="{{ route('frontend.brand', [$row->id, str_slug($row->name)]) }}">
-							<img src="{{ asset('media/'.$row->thumbnail) }}" alt="{{ $row->name }}" />
-						</a>
-					</div>
-					<div class="desc">
-						<a href="{{ route('frontend.brand', [$row->id, str_slug($row->name)]) }}">{{ $row->name }}</a>
-					</div>
-					<div class="count">{{ $row->TotalProduct }}</div>
-				</li>
-				@endforeach
-			</ul>
-		</div>
-	</div>
 </div>

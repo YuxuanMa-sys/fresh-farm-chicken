@@ -173,7 +173,7 @@ $tax_rate = $gtax['percentage'];
 								<div class="payment_card">
 									<div class="checkboxlist">
 										<label class="checkbox-title">
-											<input id="payment_method_stripe" name="payment_method" type="radio" value="3"><img src="{{ asset('public/frontend/images/stripe.png') }}" alt="Stripe" />
+											<input id="payment_method_stripe" name="payment_method" type="radio" value="3"><img src="{{ asset('frontend/images/stripe.png') }}" alt="Stripe" />
 										</label>
 									</div>
 									<div id="pay_stripe" class="row hideclass">
@@ -195,7 +195,7 @@ $tax_rate = $gtax['percentage'];
 								<div class="payment_card">
 									<div class="checkboxlist">
 										<label class="checkbox-title">
-											<input id="payment_method_paypal" name="payment_method" type="radio" value="4"><img src="{{ asset('public/frontend/images/paypal.png') }}" alt="Paypal" />
+											<input id="payment_method_paypal" name="payment_method" type="radio" value="4"><img src="{{ asset('frontend/images/paypal.png') }}" alt="Paypal" />
 										</label>
 									</div>
 									<p id="pay_paypal" class="hideclass">{{ __('Pay online via Paypal') }}</p>
@@ -206,7 +206,7 @@ $tax_rate = $gtax['percentage'];
 								<div class="payment_card">
 									<div class="checkboxlist">
 										<label class="checkbox-title">
-											<input id="payment_method_razorpay" name="payment_method" type="radio" value="5"><img src="{{ asset('public/frontend/images/razorpay.png') }}" alt="Razorpay" />
+											<input id="payment_method_razorpay" name="payment_method" type="radio" value="5"><img src="{{ asset('frontend/images/razorpay.png') }}" alt="Razorpay" />
 										</label>
 									</div>
 									<p id="pay_razorpay" class="hideclass">{{ __('Pay online via Razorpay') }}</p>
@@ -217,7 +217,7 @@ $tax_rate = $gtax['percentage'];
 								<div class="payment_card">
 									<div class="checkboxlist">
 										<label class="checkbox-title">
-											<input id="payment_method_mollie" name="payment_method" type="radio" value="6"><img src="{{ asset('public/frontend/images/mollie.png') }}" alt="Mollie" />
+											<input id="payment_method_mollie" name="payment_method" type="radio" value="6"><img src="{{ asset('frontend/images/mollie.png') }}" alt="Mollie" />
 										</label>
 									</div>
 									<p id="pay_mollie" class="hideclass">{{ __('Pay online via Mollie') }}</p>
@@ -228,7 +228,7 @@ $tax_rate = $gtax['percentage'];
 								<div class="payment_card">
 									<div class="checkboxlist">
 										<label class="checkbox-title">
-											<input id="payment_method_cod" name="payment_method" type="radio" value="1"><img src="{{ asset('public/frontend/images/cash_on_delivery.png') }}" alt="Cash on Delivery" />
+											<input id="payment_method_cod" name="payment_method" type="radio" value="1"><img src="{{ asset('frontend/images/cash_on_delivery.png') }}" alt="Cash on Delivery" />
 										</label>
 									</div>
 									<p id="pay_cod" class="hideclass">{{ $gtext['cod_description'] }}</p>
@@ -239,7 +239,7 @@ $tax_rate = $gtax['percentage'];
 								<div class="payment_card">
 									<div class="checkboxlist">
 										<label class="checkbox-title">
-											<input id="payment_method_bank" name="payment_method" type="radio" value="2"><img src="{{ asset('public/frontend/images/bank_transfer.png') }}" alt="Bank Transfer" />
+											<input id="payment_method_bank" name="payment_method" type="radio" value="2"><img src="{{ asset('frontend/images/bank_transfer.png') }}" alt="Bank Transfer" />
 										</label>
 									</div>
 									<p id="pay_bank" class="hideclass">{{ $gtext['bank_description'] }}</p>
