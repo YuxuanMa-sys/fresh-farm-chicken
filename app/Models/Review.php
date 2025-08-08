@@ -15,4 +15,20 @@ class Review extends Model
 		'rating',
 		'comments',
     ];
+
+    /**
+     * Get the user that wrote the review.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Get the product that was reviewed.
+     */
+    public function product()
+    {
+        return $this->belongsTo(Product::class, 'item_id');
+    }
 }
