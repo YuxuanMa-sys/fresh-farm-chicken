@@ -14,6 +14,7 @@ use App\Models\Order_master;
 use App\Models\Order_item;
 use App\Models\Country;
 use App\Models\Shipping;
+use App\Models\Product; // Added this import for Product model
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -247,6 +248,16 @@ class CheckoutFrontController extends Controller
 
 			Order_item::create($OrderItemData);
 
+			// Decrement stock quantity for the product
+			$product = Product::find($row['id']);
+			if ($product && $product->is_stock == 1) {
+				$newStockQty = max(0, $product->stock_qty - comma_remove($row['qty']));
+				$product->update([
+					'stock_qty' => $newStockQty,
+					'stock_status_id' => $newStockQty > 0 ? 1 : 0 // 1 = In Stock, 0 = Out of Stock
+				]);
+			}
+
 			$index++;
 		}
 
@@ -435,66 +446,6 @@ class CheckoutFrontController extends Controller
 			$res['msg'] = __('Oops! Your order is failed. Please try again.');
 			return response()->json($res);
 		}
-	}
-
-	public function PayPalPaymentSuccess(Request $request)
-	{
-		$gtext = gtext();
-
-		$order_master_ids = Session::get('order_master_ids');
-
-		Session::forget('order_master_ids');
-
-		$accessToken = $this->PayPalClient->generateAccessToken();
-		$OrderId = $request['token'];
-
-		if (empty($request['PayerID']) || empty($request['token'])) {
-
-			Order_item::whereIn('order_master_id', $order_master_ids)->delete();
-			Order_master::whereIn('id', $order_master_ids)->delete();
-
-			Session::put('pt_payment_error', __('Payment failed'));
-			return Redirect::route('frontend.checkout');
-		}
-
-		$response = $this->PayPalClient->capturePaymentOrder($accessToken, $OrderId);
-		$resArr = json_decode($response->getBody(), true);
-
-		// Handle the response as needed
-		if ($response->getStatusCode() === 201) {
-			if (isset($resArr['status']) && $resArr['status'] == 'COMPLETED') {
-
-				// $TransactionID = $resArr['purchase_units'][0]['payments']['captures'][0]['id'];
-
-				Session::forget('shopping_cart');
-
-				if ($gtext['ismail'] == 1) {
-					self::orderNotify($order_master_ids);
-				}
-
-				return Redirect::route('frontend.thank');
-			}
-		} else {
-			Order_item::whereIn('order_master_id', $order_master_ids)->delete();
-			Order_master::whereIn('id', $order_master_ids)->delete();
-
-			Session::put('pt_payment_error', __('Payment failed'));
-			return Redirect::route('frontend.checkout');
-		}
-	}
-
-	public function PayPalPaymentCancel()
-	{
-
-		$order_master_ids = Session::get('order_master_ids');
-
-		Session::forget('order_master_ids');
-
-		Order_item::whereIn('order_master_id', $order_master_ids)->delete();
-		Order_master::whereIn('id', $order_master_ids)->delete();
-
-		Session::put('pt_payment_error', __('You have canceled the transaction'));
-		return Redirect::route('frontend.checkout');
 	}
 
 	//Order Notify
