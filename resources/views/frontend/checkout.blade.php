@@ -313,10 +313,6 @@ $tax_rate = $gtax['percentage'];
 															<img src="{{ asset('media/'.$row['store_logo']) }}" alt="{{ $row['store_name'] }}" />
 														</a>
 													</div>
-													<div class="store_name">
-														<p><strong>{{ __('Sold By') }}</strong></p>
-														<p><a href="{{ route('frontend.stores', [$row['seller_id'], str_slug($row['store_url'])]) }}">{{ $row['store_name'] }}</a></p>
-													</div>
 												</td>
 											</tr>
 											

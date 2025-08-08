@@ -91,9 +91,6 @@
 						@if($data->short_desc != '')
 						<p>{{ $data->short_desc }}</p>
 						@endif
-						@if($data->shop_name != '')
-						<div class="pr_extra"><strong>{{ __('Sold By') }}:</strong> <a href="{{ route('frontend.stores', [$data->seller_id, str_slug($data->shop_url)]) }}">{{ $data->shop_name }}</a></div>
-						@endif
 						<div class="product_price">
 							@if($data->sale_price != '')
 								@if($gtext['currency_position'] == 'left')
@@ -307,9 +304,6 @@
 								</div>
 								<span class="rating-count">({{ $row->TotalReview }})</span>
 							</div>
-							<div class="item-sold">
-								{{ __('Sold By') }} <a href="{{ route('frontend.stores', [$row->seller_id, str_slug($row->shop_url)]) }}">{{ str_limit($row->shop_name) }}</a>
-							</div>
 							<div class="item-pric-card">
 								@if($row->sale_price != '')
 									@if($gtext['currency_position'] == 'left')
@@ -359,9 +353,6 @@
 									<div class="stars-inner" style="width:{{ $row->ReviewPercentage }}%;"></div>
 								</div>
 								<span class="rating-count">({{ $row->TotalReview }})</span>
-							</div>
-							<div class="item-sold">
-								{{ __('Sold By') }} <a href="{{ route('frontend.stores', [$row->seller_id, str_slug($row->shop_url)]) }}">{{ str_limit($row->shop_name) }}</a>
 							</div>
 							<div class="item-pric-card">
 								@if($row->sale_price != '')

@@ -604,7 +604,7 @@ class CheckoutFrontController extends Controller
 				$orderDataArr[$row->seller_id]['shop_name'] = $row->shop_name;
 
 				$item_list .= '<tr>
-								<td colspan="3" style="width:100%;text-align:left;border:1px solid #ddd;background-color:#f7f7f7;font-weight:bold;">' . __('Sold By') . ': <a href="' . route('frontend.stores', [$row->seller_id, str_slug($row->shop_url)]) . '"> ' . $row->shop_name . '</a>, ' . __('Order#') . ': <a href="' . route('frontend.order-invoice', [$row->id, $row->order_no]) . '"> ' . $row->order_no . '</a></td>
+								<td colspan="3" style="width:100%;text-align:left;border:1px solid #ddd;background-color:#f7f7f7;font-weight:bold;">' . __('Order#') . ': <a href="' . route('frontend.order-invoice', [$row->id, $row->order_no]) . '"> ' . $row->order_no . '</a></td>
 							</tr>';
 
 				$tempSellerId = $row->seller_id;

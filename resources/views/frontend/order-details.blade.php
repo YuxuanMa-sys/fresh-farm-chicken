@@ -83,7 +83,6 @@
 										<p class="mb5"><strong>{{ __('Payment Method') }}</strong>: {{ $mdata->method_name }}</p>
 										<p class="mb5"><strong>{{ __('Payment Status') }}</strong>: <span class="status_btn pstatus_{{ $mdata->payment_status_id }}">{{ $mdata->pstatus_name }}</span></p>
 										<p class="mb5"><strong>{{ __('Order Status') }}</strong>: <span class="status_btn ostatus_{{ $mdata->order_status_id }}">{{ $mdata->ostatus_name }}</span></p>
-										<p class="mb5"><strong>{{ __('Sold By') }}</strong>: {{ $mdata->shop_name }}</p>
 									</div>
 								</div>
 								<div class="row mt15">

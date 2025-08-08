@@ -248,7 +248,6 @@ class OrderInvoiceController extends Controller
 					<p><strong>'.__('Payment Method').'</strong>: '.$mdata->method_name.'</p>
 					<p><strong>'.__('Payment Status').'</strong>: <span class="pstatus_'.$mdata->payment_status_id.'">'.$mdata->pstatus_name.'</span></p>
 					<p><strong>'.__('Order Status').'</strong>: <span class="ostatus_'.$mdata->order_status_id.'">'.$mdata->ostatus_name.'</span></p>
-					<p><strong>'.__('Sold By').'</strong>: '.$mdata->shop_name.'</p>
 				</td>  
 			</tr>
 		</table>

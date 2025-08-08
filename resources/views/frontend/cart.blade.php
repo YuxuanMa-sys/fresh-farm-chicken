@@ -71,7 +71,6 @@ $gtax = getTax();
 								<tr>
 									<th>{{ __('Image') }}</th>
 									<th>{{ __('Product') }}</th>
-									<th>{{ __('Sold By') }}</th>
 									<th class="text-center">{{ __('Unit') }}</th>
 									<th class="text-center">{{ __('Price') }}</th>
 									<th class="text-center">{{ __('Quantity') }}</th>
@@ -111,9 +110,6 @@ $gtax = getTax();
 									</td>
 									<td class="pro-name-w" data-title="{{ __('Product') }}:">
 										<span class="pro-name"><a href="{{ route('frontend.product', [$row['id'], str_slug($row['name'])]) }}">{{ $row['name'] }}</a></span>
-									</td>
-									<td class="pro-store-w" data-title="{{ __('Sold By') }}:">
-										<a href="{{ route('frontend.stores', [$row['seller_id'], str_slug($row['store_name'])]) }}">{{ $row['store_name'] }}</a>
 									</td>
 									<td class="text-center pro-variation-w" data-title="{{ __('Unit') }}:">
 										<span class="pro-variation">{{ $row['unit'] }}</span>

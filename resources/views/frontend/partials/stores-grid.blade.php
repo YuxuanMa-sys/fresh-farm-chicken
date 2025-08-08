@@ -30,9 +30,6 @@
 				</div>
 				<span class="rating-count">({{ $row->TotalReview }})</span>
 			</div>
-			<div class="item-sold">
-				{{ __('Sold By') }} <a href="{{ route('frontend.stores', [$row->seller_id, str_slug($row->shop_url)]) }}">{{ str_limit($row->shop_name) }}</a>
-			</div>
 			<div class="item-pric-card">
 				@if($row->sale_price != '')
 					@if($gtext['currency_position'] == 'left')

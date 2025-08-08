@@ -44,4 +44,12 @@ class Product extends Model
         'og_description',
         'og_keywords',
     ];
+
+    /**
+     * Get the user that owns the product.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
