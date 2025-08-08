@@ -159,6 +159,11 @@ function HeaderMenuList($MenuType){
 			$item_label = 'Products';
 		}
 		
+		// Change 'About Us' to 'Our Story'
+		if(strtolower($item_label) == 'about us'){
+			$item_label = 'Our Story';
+		}
+		
 		
 		//Menu list for Desktop
 		if($MenuType == 'HeaderMenuListForDesktop'){
@@ -492,34 +497,40 @@ function FooterMenuList($MenuType){
 			$target_window = '';
 		}
 		
+		// Change 'About Us' to 'Our Story'
+		$item_label = $row->item_label;
+		if(strtolower($item_label) == 'about us'){
+			$item_label = 'Our Story';
+		}
+		
 		if($row->menu_type == 'page'){
 			if(strtolower($row->item_label) == 'contact us' || strtolower($row->item_label) == 'contact'){
-				$li_List .= '<li><a'.$target_window.' href="'.route('frontend.simple-contact').'">'.$row->item_label.'</a></li>';
+				$li_List .= '<li><a'.$target_window.' href="'.route('frontend.simple-contact').'">'.$item_label.'</a></li>';
 			}else{
-				$li_List .= '<li><a'.$target_window.' href="'.route('frontend.page', [$item_id, $custom_url]).'">'.$row->item_label.'</a></li>';
+				$li_List .= '<li><a'.$target_window.' href="'.route('frontend.page', [$item_id, $custom_url]).'">'.$item_label.'</a></li>';
 			}
 
 		}elseif($row->menu_type == 'brand'){
-			$li_List .= '<li><a'.$target_window.' href="'.route('frontend.brand', [$item_id, $custom_url]).'">'.$row->item_label.'</a></li>';
+			$li_List .= '<li><a'.$target_window.' href="'.route('frontend.brand', [$item_id, $custom_url]).'">'.$item_label.'</a></li>';
 			
 		}elseif($row->menu_type == 'custom_link'){
 			if(strtolower($row->item_label) == 'contact us' || strtolower($row->item_label) == 'contact'){
-				$li_List .= '<li><a'.$target_window.' href="'.route('frontend.simple-contact').'">'.$row->item_label.'</a></li>';
+				$li_List .= '<li><a'.$target_window.' href="'.route('frontend.simple-contact').'">'.$item_label.'</a></li>';
 			}else{
-				$li_List .= '<li><a'.$target_window.' href="'.$custom_url.'">'.$row->item_label.'</a></li>';
+				$li_List .= '<li><a'.$target_window.' href="'.$custom_url.'">'.$item_label.'</a></li>';
 			}
 
 		}elseif($row->menu_type == 'product'){
-			$li_List .= '<li><a'.$target_window.' href="'.route('frontend.product', [$item_id, $custom_url]).'">'.$row->item_label.'</a></li>';
+			$li_List .= '<li><a'.$target_window.' href="'.route('frontend.product', [$item_id, $custom_url]).'">'.$item_label.'</a></li>';
 			
 		}elseif($row->menu_type == 'product_category'){
-			$li_List .= '<li><a'.$target_window.' href="'.route('frontend.product-category', [$item_id, $custom_url]).'">'.$row->item_label.'</a></li>';
+			$li_List .= '<li><a'.$target_window.' href="'.route('frontend.product-category', [$item_id, $custom_url]).'">'.$item_label.'</a></li>';
 			
 		}elseif($row->menu_type == 'blog'){
 			if($item_id == 0){
-				$li_List .= '<li><a'.$target_window.' href="'.route('frontend.blog').'">'.$row->item_label.'</a></li>';
+				$li_List .= '<li><a'.$target_window.' href="'.route('frontend.blog').'">'.$item_label.'</a></li>';
 			}else{
-				$li_List .= '<li><a'.$target_window.' href="'.route('frontend.blog-category', [$item_id, $custom_url]).'">'.$row->item_label.'</a></li>';
+				$li_List .= '<li><a'.$target_window.' href="'.route('frontend.blog-category', [$item_id, $custom_url]).'">'.$item_label.'</a></li>';
 			}
 		}
 	}
@@ -610,12 +621,12 @@ function gtext(){
 	if($theme_option_header_id != ''){
 		$theme_option_headerData = json_decode($theme_option_header);
 		$theme_option_headerObj = json_decode($theme_option_headerData[0]->option_value);
-		$data['address'] = $theme_option_headerObj->address;
-		$data['phone'] = $theme_option_headerObj->phone;
+		$data['address'] = !empty($theme_option_headerObj->address) ? $theme_option_headerObj->address : 'Bhatti Farms, Raiwind, Lahore';
+		$data['phone'] = !empty($theme_option_headerObj->phone) ? $theme_option_headerObj->phone : '+92 321 9666843';
 		$data['is_publish'] = $theme_option_headerObj->is_publish;
 	}else{
-		$data['address'] = '';
-		$data['phone'] = '';
+		$data['address'] = 'Bhatti Farms, Raiwind, Lahore';
+		$data['phone'] = '+92 321 9666843';
 		$data['is_publish'] = '';
 	}
 	
@@ -651,9 +662,9 @@ function gtext(){
 		$data['about_logo_footer'] = $theme_option_footerObj->about_logo;
 		$data['about_desc_footer'] = $theme_option_footerObj->about_desc;
 		$data['is_publish_about'] = $theme_option_footerObj->is_publish_about;
-		$data['address_footer'] = $theme_option_footerObj->address;
-		$data['email_footer'] = $theme_option_footerObj->email;
-		$data['phone_footer'] = $theme_option_footerObj->phone;
+		$data['address_footer'] = !empty($theme_option_footerObj->address) ? $theme_option_footerObj->address : 'Bhatti Farms, Raiwind, Lahore';
+		$data['email_footer'] = !empty($theme_option_footerObj->email) ? $theme_option_footerObj->email : 'sales@farmfreshchickenslahore.com';
+		$data['phone_footer'] = !empty($theme_option_footerObj->phone) ? $theme_option_footerObj->phone : '+92 321 9666843';
 		$data['is_publish_contact'] = $theme_option_footerObj->is_publish_contact;
 		$data['copyright'] = $theme_option_footerObj->copyright;
 		$data['is_publish_copyright'] = $theme_option_footerObj->is_publish_copyright;
@@ -663,9 +674,9 @@ function gtext(){
 		$data['about_logo_footer'] = '';
 		$data['about_desc_footer'] = '';
 		$data['is_publish_about'] = '';
-		$data['address_footer'] = '';
-		$data['email_footer'] = '';
-		$data['phone_footer'] = '';
+		$data['address_footer'] = 'Bhatti Farms, Raiwind, Lahore';
+		$data['email_footer'] = 'sales@farmfreshchickenslahore.com';
+		$data['phone_footer'] = '+92 321 9666843';
 		$data['is_publish_contact'] = '';
 		$data['copyright'] = '';
 		$data['is_publish_copyright'] = '';

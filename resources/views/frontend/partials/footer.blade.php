@@ -95,9 +95,6 @@ $FooterSection = FooterSection();
 								@endif
 							</ul>
 						</div>
-						<div class="social-media mb25">
-							@php echo SocialMediaList(); @endphp
-						</div>
 					</div>
 					@endif
 				</div>

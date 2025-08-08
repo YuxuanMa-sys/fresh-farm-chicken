@@ -40,8 +40,9 @@ class ContactController extends Controller
     public function getSimpleContactPage(){
         $data = array(
             'title' => "We'd Love to Hear From You",
-            'phone' => '+92 300 1234567', // Update this with actual phone number
-            'email' => 'info@organicfarm.com' // Update this with actual email
+            'phone' => '+92 321 9666843',
+            'email' => 'sales@farmfreshchickenslahore.com',
+            'address' => 'Bhatti Farms, Raiwind, Lahore'
         );
         
         return view('frontend.simple-contact', compact('data'));

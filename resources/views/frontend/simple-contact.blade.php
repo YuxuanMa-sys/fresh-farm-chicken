@@ -145,6 +145,18 @@
 											</div>
 										</div>
 										
+										<div class="contact-info-item mb-4">
+											<div class="d-flex align-items-center">
+												<div class="contact-icon-wrapper me-3">
+													<i class="bi bi-geo-alt-fill" style="color: var(--theme-color); font-size: 1.5rem;"></i>
+												</div>
+												<div>
+													<h5 class="mb-1" style="color: var(--theme-color);">{{ __('Address') }}</h5>
+													<p class="mb-0">{{ $data['address'] }}</p>
+												</div>
+											</div>
+										</div>
+										
 										<div class="contact-info-item">
 											<div class="d-flex align-items-center">
 												<div class="contact-icon-wrapper me-3">

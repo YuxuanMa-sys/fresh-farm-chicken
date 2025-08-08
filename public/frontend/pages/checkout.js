@@ -27,7 +27,6 @@ $(function () {
 		$("#pay_razorpay").addClass("hideclass");
 		$("#pay_mollie").addClass("hideclass");
 		$("#pay_cod").addClass("hideclass");
-		$("#pay_bank").addClass("hideclass");
 		$("#pay_stripe").removeClass("hideclass");
     });
 	
@@ -36,7 +35,6 @@ $(function () {
 		$("#pay_razorpay").addClass("hideclass");
 		$("#pay_mollie").addClass("hideclass");
 		$("#pay_cod").addClass("hideclass");
-		$("#pay_bank").addClass("hideclass");
 		$("#pay_paypal").removeClass("hideclass");
     });
 	
@@ -45,7 +43,6 @@ $(function () {
 		$("#pay_paypal").addClass("hideclass");
 		$("#pay_mollie").addClass("hideclass");
 		$("#pay_cod").addClass("hideclass");
-		$("#pay_bank").addClass("hideclass");
 		$("#pay_razorpay").removeClass("hideclass");
     });
 	
@@ -54,7 +51,6 @@ $(function () {
 		$("#pay_paypal").addClass("hideclass");
 		$("#pay_razorpay").addClass("hideclass");
 		$("#pay_cod").addClass("hideclass");
-		$("#pay_bank").addClass("hideclass");
 		$("#pay_mollie").removeClass("hideclass");
     });
 	
@@ -63,17 +59,7 @@ $(function () {
 		$("#pay_paypal").addClass("hideclass");
 		$("#pay_razorpay").addClass("hideclass");
 		$("#pay_mollie").addClass("hideclass");
-		$("#pay_bank").addClass("hideclass");
 		$("#pay_cod").removeClass("hideclass");
-    });
-	
-    $("#payment_method_bank").on("click", function () {
-		$("#pay_stripe").addClass("hideclass");
-		$("#pay_paypal").addClass("hideclass");
-		$("#pay_razorpay").addClass("hideclass");
-		$("#pay_mollie").addClass("hideclass");
-		$("#pay_cod").addClass("hideclass");
-		$("#pay_bank").removeClass("hideclass");
     });
 	
     $(".shipping_method").on("click", function () {

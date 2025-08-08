@@ -234,17 +234,6 @@ $tax_rate = $gtax['percentage'];
 									<p id="pay_cod" class="hideclass">{{ $gtext['cod_description'] }}</p>
 								</div>
 								@endif
-								
-								@if($gtext['bank_isenable'] == 1)
-								<div class="payment_card">
-									<div class="checkboxlist">
-										<label class="checkbox-title">
-											<input id="payment_method_bank" name="payment_method" type="radio" value="2"><img src="{{ asset('frontend/images/bank_transfer.png') }}" alt="Bank Transfer" />
-										</label>
-									</div>
-									<p id="pay_bank" class="hideclass">{{ $gtext['bank_description'] }}</p>
-								</div>
-								@endif
 							</div>
 						</div>
 						<div class="row">

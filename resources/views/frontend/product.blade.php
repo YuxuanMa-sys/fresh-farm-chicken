@@ -193,7 +193,6 @@
 						<div class="desc-review-nav nav">
 							<a class="active" href="#des_description" data-bs-toggle="tab">{{ __('Description') }}</a>
 							<a href="#des_reviews" data-bs-toggle="tab">{{ __('Reviews') }} ({{ $data->TotalReview }})</a>
-							<a href="#vendor" data-bs-toggle="tab">{{ __('Vendor') }}</a>
 						</div>
 						<div class="tab-content">
 							<!-- Description -->
@@ -264,41 +263,6 @@
 								</div>
 							</div>
 							<!-- /Review/ -->
-							
-							<!-- Vendor -->
-							<div id="vendor" class="tab-pane">
-								<div class="store-content">
-									<div class="row">
-										<div class="col-lg-12">
-											<div class="stores-card">
-												<div class="store-logo">
-													@if($seller_data->photo == '')
-													<span class="text">{{ sub_str($seller_data->shop_name, 0,1) }}</span>
-													@else
-													<img src="{{ asset('media/'.$seller_data->photo) }}" alt="{{ $seller_data->shop_name }}"/>
-													@endif
-												</div>
-												<div class="desc">
-													<h3 class="store-name"><a href="{{ route('frontend.stores', [$data->seller_id, str_slug($data->shop_url)]) }}">{{ $seller_data->shop_name }}</a></h3>
-													<h6 class="since">{{ __('Since') }} {{ date('Y', strtotime($seller_data->created_at)) }}</h6>
-													<div class="rating-wrap">
-														<div class="stars-outer">
-															<div class="stars-inner" style="width:{{ $SellerReview['ReviewPercentage'] }}%;"></div>
-														</div>
-														<span class="rating-count">({{ $SellerReview['TotalReview'] }})</span>
-													</div>
-													<ul class="info">
-														<li><i class="bi bi-telephone"></i>{{ $seller_data->phone }}</li>
-														<li><i class="bi bi-envelope"></i>{{ $seller_data->email }}</li>
-														<li><i class="bi bi-geo-alt"></i>{{ $seller_data->address }}</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /Vendor/ -->
 						</div>
 					</div>
 				</div>

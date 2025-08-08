@@ -43,13 +43,25 @@
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="{{ url('/') }}">{{ __('Home') }}</a></li>
-							<li class="breadcrumb-item active" aria-current="page">{{ $data['title'] }}</li>
+							<li class="breadcrumb-item active" aria-current="page">
+								@if(strtolower($data['title']) == 'about us')
+									Our Story
+								@else
+									{{ $data['title'] }}
+								@endif
+							</li>
 						</ol>
 					</nav>
 				</div>
 				<div class="col-lg-6">
 					<div class="page-title">
-						<h1>{{ $data['title'] }}</h1>
+						<h1>
+							@if(strtolower($data['title']) == 'about us')
+								Our Story
+							@else
+								{{ $data['title'] }}
+							@endif
+						</h1>
 					</div>
 				</div>
 			</div>
