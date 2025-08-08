@@ -74,7 +74,7 @@
 	
 	<!-- Popular Products -->
 	@if($section3->is_publish == 1)
-	<section class="section product-section">
+	<section class="section product-section" style="padding-top:40px !important; padding-bottom:40px !important;">
 		<div class="container">
 			<div class="row">
 				<div class="col">
