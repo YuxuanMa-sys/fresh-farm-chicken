@@ -7598,3 +7598,19 @@ ul.errors-list li {
 		max-height: 18px;
 	}
 }
+/* Full Mac Width - Reduce footer logo size */
+@media (min-width: 1440px) {
+	.footer-widget .info-card .info-logo img,
+	.footer-widget .info-card .info-logo .footer-logo {
+		max-height: 200px;
+		margin-left: 15px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.footer-widget .info-card .info-logo img,
+	.footer-widget .info-card .info-logo .footer-logo {
+		max-height: 150px;
+		margin-left: 15px;
+	}
+}
