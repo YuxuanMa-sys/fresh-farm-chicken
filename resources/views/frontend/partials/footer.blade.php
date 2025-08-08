@@ -31,14 +31,14 @@ $FooterSection = FooterSection();
 	<div class="footer-middle">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 footer-border">
+				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 footer-border">
 					<div class="footer-widget-card">
 						@if($gtext['is_publish_about'] == 1)
 						<div class="footer-widget mb25">
 							<div class="info-card">
 								@if($gtext['about_logo_footer'] != '')
 								<div class="info-logo" style="margin-bottom: 0px;">
-									<img src="{{ asset('media/'.$gtext['about_logo_footer']) }}" alt="" style="max-height: 250px; width: auto; margin-left:30px;" />
+									<img src="{{ asset('media/'.$gtext['about_logo_footer']) }}" alt="" class="img-fluid footer-logo" />
 								</div>
 								@endif
 								@if($gtext['about_desc_footer'] != '')
@@ -49,7 +49,7 @@ $FooterSection = FooterSection();
 						@endif
 					</div>
 				</div>
-				<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 footer-border">
+				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 footer-border">
 					@if($gtext['is_publish_contact'] == 1)
 					<div class="footer-widget-card">
 						<div class="footer-widget mb10">
@@ -98,7 +98,7 @@ $FooterSection = FooterSection();
 					</div>
 					@endif
 				</div>
-				<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+				<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
 					@if(FooterMenuList('footer') != '')
 					<div class="footer-widget-card">
 						<div class="footer-widget mb25">
@@ -110,25 +110,24 @@ $FooterSection = FooterSection();
 					</div>
 					@endif
 				</div>
-				
 			</div>
 		</div>
 	</div>
 	<div class="footer-bottom">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
+			<div class="row align-items-center">
+				<div class="col-12 col-sm-6 col-md-6 col-lg-6">
 					@if($gtext['is_publish_copyright'] == 1)
 					<div class="copy-right">
 						@php echo $gtext['copyright']; @endphp
 					</div>
 					@endif
 				</div>
-				<div class="col-lg-6">
+				<div class="col-12 col-sm-6 col-md-6 col-lg-6">
 					@if($gtext['is_publish_payment'] == 1)
 					<div class="payment-method">
 						@if($gtext['payment_gateway_icon'] != '')
-						<img src="{{ asset('media/'.$gtext['payment_gateway_icon']) }}" />
+						<img src="{{ asset('media/'.$gtext['payment_gateway_icon']) }}" class="img-fluid" />
 						@endif
 					</div>
 					@endif

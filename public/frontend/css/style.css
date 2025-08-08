@@ -4761,8 +4761,11 @@ ul.errors-list li {
 	margin-bottom: 20px;
 }
 
-.footer-widget .info-card .info-logo img {
-	max-height: 50px;
+.footer-widget .info-card .info-logo img,
+.footer-widget .info-card .info-logo .footer-logo {
+	max-height: 250px;
+	width: auto;
+	margin-left: 30px;
 }
 
 .footer-widget .info-card p {
@@ -4853,6 +4856,7 @@ ul.errors-list li {
 
 .payment-method img {
 	max-height: 30px;
+	width: auto;
 }
 
 /* ======================
@@ -7111,5 +7115,486 @@ ul.errors-list li {
 
 	.nutritional-highlights {
 		padding: 15px;
+	}
+}
+
+/* ======================
+   Footer Responsive Styles
+   ====================== */
+@media (max-width: 1200px) {
+	.footer-section {
+		padding: 50px 0 0;
+	}
+	
+	.footer-middle {
+		padding: 0 0 35px;
+	}
+	
+	.footer-widget .widget-title {
+		font-size: 1.3rem;
+		margin-bottom: 20px;
+	}
+	
+	.footer-widget .info-card .info-logo img,
+	.footer-widget .info-card .info-logo .footer-logo {
+		max-height: 200px;
+		margin-left: 20px;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card .contact-icon {
+		width: 35px;
+		height: 35px;
+		margin-right: 12px;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card .contact-icon i {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 991px) {
+	.footer-section {
+		padding: 25px 0 0;
+	}
+	
+	.footer-middle {
+		padding: 0 0 25px;
+	}
+	
+	.footer-widget .widget-title {
+		font-size: 1.2rem;
+		margin-bottom: 15px;
+	}
+	
+	.footer-widget .info-card .info-logo {
+		margin-bottom: 12px;
+	}
+	
+	.footer-widget .info-card .info-logo img,
+	.footer-widget .info-card .info-logo .footer-logo {
+		max-height: 150px;
+		margin-left: 15px;
+	}
+	
+	.footer-widget .info-card p {
+		font-size: 1rem;
+		line-height: 1.7;
+	}
+	
+	.footer-widget ul.widget-contact li {
+		margin-bottom: 12px;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card .contact-icon {
+		width: 32px;
+		height: 32px;
+		margin-right: 10px;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card .contact-icon i {
+		font-size: 14px;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card .contact-desc h5 {
+		font-size: 1rem;
+		margin-bottom: 3px;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card .contact-desc p {
+		font-size: 0.95rem;
+		word-break: break-word;
+		overflow-wrap: break-word;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card .contact-desc {
+		display: none;
+	}
+	
+	.footer-widget ul.widget-contact {
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.footer-widget ul.widget-contact li {
+		margin-bottom: 8px;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card {
+		justify-content: center;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card .contact-icon {
+		width: 32px;
+		height: 32px;
+		margin-right: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.footer-widget ul.widget-list li {
+		margin-bottom: 8px;
+	}
+	
+	.footer-widget ul.widget-list li a {
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.footer-section {
+		padding: 20px 0 0;
+	}
+	
+	.footer-middle {
+		padding: 0 0 20px;
+	}
+	
+	.footer-middle .row {
+		align-items: stretch;
+	}
+	
+	.footer-middle .row > div {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.footer-widget .widget-title {
+		font-size: 1.1rem;
+		margin-bottom: 12px;
+		text-align: center;
+	}
+	
+	.footer-widget .info-card .info-logo {
+		margin-bottom: 10px;
+		text-align: center;
+	}
+	
+	.footer-widget .info-card .info-logo img,
+	.footer-widget .info-card .info-logo .footer-logo {
+		max-height: 120px;
+		margin-left: 0;
+	}
+	
+	.footer-widget .info-card p {
+		font-size: 0.9rem;
+		line-height: 1.6;
+		text-align: center;
+	}
+	
+	.footer-widget ul.widget-contact {
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.footer-widget ul.widget-contact li {
+		margin-bottom: 8px;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card {
+		justify-content: center;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card .contact-icon {
+		width: 28px;
+		height: 28px;
+		margin-right: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card .contact-icon i {
+		font-size: 12px;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card .contact-desc {
+		display: none;
+	}
+	
+	.footer-widget ul.widget-list {
+		text-align: center;
+	}
+	
+	.footer-widget ul.widget-list li {
+		margin-bottom: 5px;
+	}
+	
+	.footer-widget ul.widget-list li a {
+		font-size: 0.9rem;
+	}
+	
+	.footer-widget-card {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	
+	.footer-widget {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	
+	.footer-bottom {
+		padding: 12px 0;
+	}
+	
+	.copy-right {
+		font-size: 0.85rem;
+	}
+	
+	.payment-method img {
+		max-height: 25px;
+	}
+}
+
+@media (max-width: 480px) {
+	.footer-section {
+		padding: 15px 0 0;
+	}
+	
+	.footer-middle {
+		padding: 0 0 15px;
+	}
+	
+	.footer-middle .row {
+		align-items: stretch;
+	}
+	
+	.footer-middle .row > div {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.footer-widget .widget-title {
+		font-size: 1rem;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+	
+	.footer-widget .info-card .info-logo {
+		margin-bottom: 8px;
+		text-align: center;
+	}
+	
+	.footer-widget .info-card .info-logo img,
+	.footer-widget .info-card .info-logo .footer-logo {
+		max-height: 100px;
+		margin-left: 0;
+	}
+	
+	.footer-widget .info-card p {
+		font-size: 0.85rem;
+		line-height: 1.5;
+		text-align: center;
+	}
+	
+	.footer-widget ul.widget-contact {
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.footer-widget ul.widget-contact li {
+		margin-bottom: 6px;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card {
+		justify-content: center;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card .contact-icon {
+		width: 25px;
+		height: 25px;
+		margin-right: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card .contact-icon i {
+		font-size: 11px;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card .contact-desc {
+		display: none;
+	}
+	
+	.footer-widget ul.widget-list {
+		text-align: center;
+	}
+	
+	.footer-widget ul.widget-list li {
+		margin-bottom: 4px;
+	}
+	
+	.footer-widget ul.widget-list li a {
+		font-size: 0.85rem;
+	}
+	
+	.footer-widget-card {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	
+	.footer-widget {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	
+	.footer-bottom {
+		padding: 10px 0;
+	}
+	
+	.copy-right {
+		font-size: 0.8rem;
+	}
+	
+	.payment-method img {
+		max-height: 20px;
+	}
+}
+
+@media (max-width: 375px) {
+	.footer-section {
+		padding: 12px 0 0;
+	}
+	
+	.footer-middle {
+		padding: 0 0 12px;
+	}
+	
+	.footer-middle .row {
+		align-items: stretch;
+	}
+	
+	.footer-middle .row > div {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.footer-widget .widget-title {
+		font-size: 0.95rem;
+		margin-bottom: 8px;
+		text-align: center;
+	}
+	
+	.footer-widget .info-card .info-logo {
+		margin-bottom: 6px;
+		text-align: center;
+	}
+	
+	.footer-widget .info-card .info-logo img,
+	.footer-widget .info-card .info-logo .footer-logo {
+		max-height: 80px;
+		margin-left: 0;
+	}
+	
+	.footer-widget .info-card p {
+		font-size: 0.8rem;
+		line-height: 1.4;
+		text-align: center;
+	}
+	
+	.footer-widget ul.widget-contact {
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.footer-widget ul.widget-contact li {
+		margin-bottom: 5px;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card {
+		justify-content: center;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card .contact-icon {
+		width: 22px;
+		height: 22px;
+		margin-right: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card .contact-icon i {
+		font-size: 10px;
+	}
+	
+	.footer-widget ul.widget-contact li .contact-card .contact-desc {
+		display: none;
+	}
+	
+	.footer-widget ul.widget-list {
+		text-align: center;
+	}
+	
+	.footer-widget ul.widget-list li {
+		margin-bottom: 3px;
+	}
+	
+	.footer-widget ul.widget-list li a {
+		font-size: 0.8rem;
+	}
+	
+	.footer-widget-card {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	
+	.footer-widget {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	
+	.footer-bottom {
+		padding: 8px 0;
+	}
+	
+	.copy-right {
+		font-size: 0.75rem;
+	}
+	
+	.payment-method img {
+		max-height: 18px;
 	}
 }
