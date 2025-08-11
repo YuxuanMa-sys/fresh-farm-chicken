@@ -36,7 +36,7 @@
 			@include('backend.partials.topnav')
 			<!--/Top Navbar/-->
 			<!--Main Body-->
-			@yield('content')	
+			@yield('content')
 			<!--/Main Body/-->
 		</div><!-- /Page Content/ -->
 	</div><!--/wrapper-->
@@ -66,6 +66,7 @@
 		</div>
 	</div>
 	<a href="#lightCustomModal" class="btn btn-warning btn-small lightCustomModal_open dnone">{{ __('Edit') }}</a>
+	<!-- Removed auto-transform script to avoid breaking click handlers -->
 	@stack('scripts')
   </body>
 </html>

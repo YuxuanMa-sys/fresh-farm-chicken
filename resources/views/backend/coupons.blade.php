@@ -7,7 +7,7 @@
 <div class="main-body">
 	<div class="container-fluid">
 		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
+		@if($vipc['bkey'] == 0)
 		@include('backend.partials.vipc')
 		@else
 		<div class="row mt-25">
@@ -124,5 +124,5 @@ var TEXT = [];
 	TEXT['Please select action'] = "{{ __('Please select action') }}";
 	TEXT['Please select record'] = "{{ __('Please select record') }}";
 </script>
-<script src="{{asset('public/backend/pages/coupons.js')}}"></script>
+<script src="{{asset('backend/pages/coupons.js')}}"></script>
 @endpush

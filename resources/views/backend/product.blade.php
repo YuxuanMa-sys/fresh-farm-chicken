@@ -7,7 +7,7 @@
 <div class="main-body">
 	<div class="container-fluid">
 		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
+		@if($vipc['bkey'] == 0)
 		@include('backend.partials.vipc')
 		@else
 		<div class="row mt-25">
@@ -30,7 +30,7 @@
 						<div class="tabs-body">
 							<!--Data Entry Form-->
 							<form novalidate="" data-validate="parsley" id="DataEntry_formId">
-								<div class="row">	
+								<div class="row">
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label for="lan">{{ __('Language') }}<span class="red">*</span></label>
@@ -53,7 +53,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="row">	
+								<div class="row">
 									<div class="col-lg-12">
 										<div class="form-group">
 											<label for="slug">{{ __('Slug') }}<span class="red">*</span></label>
@@ -61,7 +61,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="row">	
+								<div class="row">
 									<div class="col-lg-12">
 										<div class="form-group">
 											<label for="short_desc">{{ __('Short Description') }}</label>
@@ -69,7 +69,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="row">	
+								<div class="row">
 									<div class="col-lg-12">
 										<div class="form-group tpeditor">
 											<label for="description">{{ __('Product Content') }}</label>
@@ -77,7 +77,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="row">	
+								<div class="row">
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label for="brand_id">{{ __('Brand') }}<span class="red">*</span></label>
@@ -90,7 +90,7 @@
 											@endforeach
 											</select>
 										</div>
-									</div>	
+									</div>
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label for="cat_id">{{ __('Category') }}<span class="red">*</span></label>
@@ -106,7 +106,7 @@
 									</div>
 								</div>
 
-								<div class="row">	
+								<div class="row">
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label for="tax_id">{{ __('Tax') }}<span class="red">*</span></label>
@@ -152,7 +152,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="row">
 									<div class="col-lg-6">
 										<div class="form-group">
@@ -173,7 +173,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="row">
 									<div class="col-lg-6">
 										<div class="form-group">
@@ -252,8 +252,8 @@ var TEXT = [];
 	TEXT['Select Category'] = "{{ __('Select Category') }}";
 
 </script>
-<link href="{{asset('public/backend/editor/summernote-lite.min.css')}}" rel="stylesheet">
-<script src="{{asset('public/backend/editor/summernote-lite.min.js')}}"></script>
-<script src="{{asset('public/backend/pages/product.js')}}"></script>
-<script src="{{asset('public/backend/pages/global-media.js')}}"></script>
+<link href="{{asset('backend/editor/summernote-lite.min.css')}}" rel="stylesheet">
+<script src="{{asset('backend/editor/summernote-lite.min.js')}}"></script>
+<script src="{{asset('backend/pages/product.js')}}"></script>
+<script src="{{asset('backend/pages/global-media.js')}}"></script>
 @endpush

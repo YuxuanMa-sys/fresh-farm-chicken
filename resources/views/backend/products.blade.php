@@ -7,7 +7,7 @@
 <div class="main-body">
 	<div class="container-fluid">
 		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
+		@if($vipc['bkey'] == 0)
 		@include('backend.partials.vipc')
 		@else
 		<div class="row mt-25">
@@ -39,7 +39,7 @@
 							</div>
 							<div class="col-md-3"></div>
 						</div>
-						
+
 						<div class="row mb-10">
 							<div class="col-md-3">
 								<div class="form-group mb-10">
@@ -91,7 +91,7 @@
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="row">
 							<div class="col-lg-4">
 								<div class="form-group bulk-box">
@@ -117,7 +117,7 @@
 						</div>
 					</div>
 					<!--/Data grid/-->
-					
+
 					<!--Data Entry Form-->
 					<div id="form-panel" class="card-body dnone">
 						<form novalidate="" data-validate="parsley" id="DataEntry_formId">
@@ -129,7 +129,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="row">	
+							<div class="row">
 								<div class="col-md-12">
 									<div class="form-group">
 										<label for="slug">{{ __('Slug') }}<span class="red">*</span></label>
@@ -161,7 +161,7 @@
 											@endforeach
 										</select>
 									</div>
-								</div>	
+								</div>
 								<div class="col-md-3">
 									<div class="form-group">
 										<label for="brandid">{{ __('Brand') }}<span class="red">*</span></label>
@@ -174,7 +174,7 @@
 											@endforeach
 										</select>
 									</div>
-								</div>	
+								</div>
 								<div class="col-md-3">
 									<div class="form-group">
 										<label for="storeid">{{ __('Store') }}<span class="red">*</span></label>
@@ -188,7 +188,7 @@
 									</div>
 								</div>
 							</div>
-								
+
 							<input type="text" name="RecordId" id="RecordId" class="dnone">
 							<div class="row tabs-footer mt-15">
 								<div class="col-lg-12">
@@ -222,5 +222,5 @@ var TEXT = [];
 	TEXT['All Category'] = "{{ __('All Category') }}";
 	TEXT['All Brand'] = "{{ __('All Brand') }}";
 </script>
-<script src="{{asset('public/backend/pages/products.js')}}"></script>
+<script src="{{asset('backend/pages/products.js')}}">></script>
 @endpush

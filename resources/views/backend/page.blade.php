@@ -7,7 +7,7 @@
 <div class="main-body">
 	<div class="container-fluid">
 		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
+		@if($vipc['bkey'] == 0)
 		@include('backend.partials.vipc')
 		@else
 		<div class="row mt-25">
@@ -75,7 +75,7 @@
 						</div>
 					</div>
 					<!--/Data grid/-->
-					
+
 					<!--Data Entry Form-->
 					<div id="form-panel" class="card-body dnone">
 						<form novalidate="" data-validate="parsley" id="DataEntry_formId">
@@ -160,7 +160,7 @@ var TEXT = [];
 	TEXT['Please select action'] = "{{ __('Please select action') }}";
 	TEXT['Please select record'] = "{{ __('Please select record') }}";
 </script>
-<link href="{{asset('public/backend/editor/summernote-lite.min.css')}}" rel="stylesheet">
-<script src="{{asset('public/backend/editor/summernote-lite.min.js')}}"></script>
-<script src="{{asset('public/backend/pages/page.js')}}"></script>
+<link href="{{asset('backend/editor/summernote-lite.min.css')}}" rel="stylesheet">
+<script src="{{asset('backend/editor/summernote-lite.min.js')}}"></script>
+<script src="{{asset('backend/pages/page.js')}}"></script>
 @endpush

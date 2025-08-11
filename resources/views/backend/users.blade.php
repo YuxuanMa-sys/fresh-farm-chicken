@@ -7,7 +7,7 @@
 <div class="main-body">
 	<div class="container-fluid">
 		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
+		@if($vipc['bkey'] == 0)
 		@include('backend.partials.vipc')
 		@else
 		<div class="row mt-25">
@@ -26,7 +26,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<!--Data grid-->
 					<div id="list-panel" class="card-body">
 						<div class="row">
@@ -96,7 +96,7 @@
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
@@ -123,7 +123,7 @@
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
@@ -141,9 +141,9 @@
 								</div>
 								<div class="col-md-6"></div>
 							</div>
-							
+
 							<input type="text" id="RecordId" name="RecordId" class="dnone"/>
-							
+
 							<div class="row tabs-footer mt-15">
 								<div class="col-lg-12">
 									<a id="submit-form" href="javascript:void(0);" class="btn blue-btn mr-10">{{ __('Save') }}</a>
@@ -179,6 +179,6 @@ var TEXT = [];
 	TEXT['Please select action'] = "{{ __('Please select action') }}";
 	TEXT['Please select record'] = "{{ __('Please select record') }}";
 </script>
-<script src="{{asset('public/backend/pages/users.js')}}"></script>
-<script src="{{asset('public/backend/pages/global-media.js')}}"></script>
+<script src="{{asset('backend/pages/users.js')}}"></script>
+<script src="{{asset('backend/pages/global-media.js')}}"></script>
 @endpush
