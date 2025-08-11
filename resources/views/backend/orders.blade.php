@@ -7,7 +7,7 @@
 <div class="main-body">
 	<div class="container-fluid">
 		@php $vipc = vipc(); @endphp
-		@if($vipc['bkey'] == 0) 
+		@if($vipc['bkey'] == 0)
 		@include('backend.partials.vipc')
 		@else
 		<div class="row mt-25">
@@ -107,5 +107,5 @@ $(function () {
 	});
 });
 </script>
-<script src="{{asset('public/backend/pages/orders.js')}}"></script>
+<script src="{{asset('backend/pages/orders.js')}}"></script>
 @endpush
