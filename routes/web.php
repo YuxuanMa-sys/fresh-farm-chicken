@@ -95,8 +95,7 @@ Route::get('/thank', [App\Http\Controllers\Frontend\CheckoutFrontController::cla
 Route::get('/PayPalpayment-cancel', [App\Http\Controllers\Frontend\CheckoutFrontController::class, 'PayPalPaymentCancel'])->name('cancel.PayPalPayment');
 Route::get('/PayPalpayment-success', [App\Http\Controllers\Frontend\CheckoutFrontController::class, 'PayPalPaymentSuccess'])->name('success.PayPalPayment');
 
-//Order Tracking
-Route::get('/order-tracking', [App\Http\Controllers\Frontend\OrderTrackingController::class, 'getOrderTracking'])->name('frontend.order-tracking');
+
 
 //Order Invoice
 Route::get('/order-invoice/{id}/{order_no}', [App\Http\Controllers\Frontend\OrderInvoiceController::class, 'getOrderInvoice'])->name('frontend.order-invoice');
@@ -104,9 +103,7 @@ Route::get('/order-invoice/{id}/{order_no}', [App\Http\Controllers\Frontend\Orde
 //Reviews
 Route::post('/frontend/saveReviews', [App\Http\Controllers\Frontend\ReviewsController::class, 'saveReviews'])->name('frontend.saveReviews');
 
-//Subscribe
-Route::post('/frontend/saveSubscriber', [App\Http\Controllers\Backend\NewslettersController::class, 'saveSubscriberData'])->name('frontend.saveSubscriber');
-Route::post('/frontend/subscribePopupOff', [App\Http\Controllers\Backend\NewslettersController::class, 'subscribePopupOff'])->name('frontend.subscribePopupOff');
+
 
 //Stores
 Route::get('/stores/{id}/{title}', [App\Http\Controllers\Frontend\StoresController::class, 'getStoresData'])->name('frontend.stores');

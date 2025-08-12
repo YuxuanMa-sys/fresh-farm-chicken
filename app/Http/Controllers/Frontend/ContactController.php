@@ -42,7 +42,7 @@ class ContactController extends Controller
             'title' => "We'd Love to Hear From You",
             'phone' => '+92 321 9666843',
             'email' => 'sales@farmfreshchickenslahore.com',
-            'address' => 'Bhatti Farms, Raiwind, Lahore'
+            			'address' => 'S&S Farms, Raiwind, Lahore'
         );
         
         return view('frontend.simple-contact', compact('data'));

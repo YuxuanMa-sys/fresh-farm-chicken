@@ -18,7 +18,6 @@
 					</div>
 					<div class="col-lg-6">
 						<ul class="top-list">
-							<li><a href="{{ route('frontend.order-tracking') }}"><i class="bi bi-geo"></i>{{ __('Order Tracking') }}</a></li>
 							@auth
 							<li>
 								<div class="btn-group language-menu">

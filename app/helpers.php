@@ -621,11 +621,11 @@ function gtext(){
 	if($theme_option_header_id != ''){
 		$theme_option_headerData = json_decode($theme_option_header);
 		$theme_option_headerObj = json_decode($theme_option_headerData[0]->option_value);
-		$data['address'] = !empty($theme_option_headerObj->address) ? $theme_option_headerObj->address : 'Bhatti Farms, Raiwind, Lahore';
+		$data['address'] = !empty($theme_option_headerObj->address) ? $theme_option_headerObj->address : 'S&S Farms, Raiwind, Lahore';
 		$data['phone'] = !empty($theme_option_headerObj->phone) ? $theme_option_headerObj->phone : '+92 321 9666843';
 		$data['is_publish'] = $theme_option_headerObj->is_publish;
 	}else{
-		$data['address'] = 'Bhatti Farms, Raiwind, Lahore';
+		$data['address'] = 'S&S Farms, Raiwind, Lahore';
 		$data['phone'] = '+92 321 9666843';
 		$data['is_publish'] = '';
 	}
@@ -662,19 +662,19 @@ function gtext(){
 		$data['about_logo_footer'] = $theme_option_footerObj->about_logo;
 		$data['about_desc_footer'] = $theme_option_footerObj->about_desc;
 		$data['is_publish_about'] = $theme_option_footerObj->is_publish_about;
-		$data['address_footer'] = !empty($theme_option_footerObj->address) ? $theme_option_footerObj->address : 'Bhatti Farms, Raiwind, Lahore';
+		$data['address_footer'] = !empty($theme_option_footerObj->address) ? $theme_option_footerObj->address : 'S&S Farms, Raiwind, Lahore';
 		$data['email_footer'] = !empty($theme_option_footerObj->email) ? $theme_option_footerObj->email : 'sales@farmfreshchickenslahore.com';
 		$data['phone_footer'] = !empty($theme_option_footerObj->phone) ? $theme_option_footerObj->phone : '+92 321 9666843';
 		$data['is_publish_contact'] = $theme_option_footerObj->is_publish_contact;
-		$data['copyright'] = $theme_option_footerObj->copyright;
-		$data['is_publish_copyright'] = $theme_option_footerObj->is_publish_copyright;
-		$data['payment_gateway_icon'] = $theme_option_footerObj->payment_gateway_icon;
-		$data['is_publish_payment'] = $theme_option_footerObj->is_publish_payment;
+		$data['copyright'] = !empty($theme_option_footerObj->copyright) ? $theme_option_footerObj->copyright : '© 2024 S&S Farms. All rights reserved.';
+		$data['is_publish_copyright'] = !empty($theme_option_footerObj->is_publish_copyright) ? $theme_option_footerObj->is_publish_copyright : '1';
+		$data['payment_gateway_icon'] = !empty($theme_option_footerObj->payment_gateway_icon) ? $theme_option_footerObj->payment_gateway_icon : '';
+		$data['is_publish_payment'] = !empty($theme_option_footerObj->is_publish_payment) ? $theme_option_footerObj->is_publish_payment : '0';
 	}else{
 		$data['about_logo_footer'] = '';
 		$data['about_desc_footer'] = '';
 		$data['is_publish_about'] = '';
-		$data['address_footer'] = 'Bhatti Farms, Raiwind, Lahore';
+		$data['address_footer'] = 'S&S Farms, Raiwind, Lahore';
 		$data['email_footer'] = 'sales@farmfreshchickenslahore.com';
 		$data['phone_footer'] = '+92 321 9666843';
 		$data['is_publish_contact'] = '';

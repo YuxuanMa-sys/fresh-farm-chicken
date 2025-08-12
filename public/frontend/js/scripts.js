@@ -369,46 +369,7 @@
 		]
 	});
 	
-	//Subscribe for footer
-	$(document).on("click", ".subscribe_btn", function(event) {
-		event.preventDefault();
 
-		var sub_email = $("#subscribe_email").val();
-		var status = 'subscribed';
-		
-		var sub_btn = $('.sub_btn').html();
-		var sub_recordid = '';
-		
-		var subscribe_email = sub_email.trim();
-		
-		if(subscribe_email == ''){
-			$('.subscribe_msg').html('<p class="text-danger">The email address field is required.</p>');
-			return;
-		}
-		
-		$.ajax({
-			type : 'POST',
-			url: base_url + '/frontend/saveSubscriber',
-			data: 'RecordId=' + sub_recordid+'&email_address='+subscribe_email+'&status='+status,
-			beforeSend: function() {
-				$('.subscribe_msg').html('');
-				$('.sub_btn').html('<span class="spinner-border spinner-border-sm"></span> Please Wait...');
-			},
-			success: function (response) {			
-				var msgType = response.msgType;
-				var msg = response.msg;
-
-				if (msgType == "success") {
-					$("#subscribe_email").val('');
-					$('.subscribe_msg').html('<p class="text-success">'+msg+'</p>');
-				} else {
-					$('.subscribe_msg').html('<p class="text-danger">'+msg+'</p>');
-				}
-				
-				$('.sub_btn').html(sub_btn);
-			}
-		});
-	});
 	
 	//Testimonials Carousel
 	$('.testimonials-carousel').owlCarousel({

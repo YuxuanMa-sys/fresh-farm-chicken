@@ -111,7 +111,7 @@
 							</h2>
 							<div class="operations-text" style="margin-bottom: 40px;">
 								<p style="font-size: 1.1rem; line-height: 1.8; color: #374151; margin-bottom: 20px;">
-									Bhatti Farms is at the forefront of the market, emphasizing freshness, quality, ethical, and transparent chicken-farming methods. We follow principles of good farming and sustainability, ensuring our products are safe, suitable, and truthfully labeled.
+									S&S Farms is at the forefront of the market, emphasizing freshness, quality, ethical, and transparent chicken-farming methods. We follow principles of good farming and sustainability, ensuring our products are safe, suitable, and truthfully labeled.
 								</p>
 							</div>
 
@@ -120,7 +120,7 @@
 							</h2>
 							<div class="farms-text">
 								<p style="font-size: 1.1rem; line-height: 1.8; color: #374151; margin-bottom: 20px;">
-									Our farm is located at <strong>Bhatti Farm House, Lahore, Pakistan</strong>. The environment features rolling hills and lush, green countryside, providing a natural, peaceful environment for our chickens to roam, scratch, explore... and grow healthy.
+									Our farm is located at <strong>S&S Farm House, Lahore, Pakistan</strong>. The environment features rolling hills and lush, green countryside, providing a natural, peaceful environment for our chickens to roam, scratch, explore... and grow healthy.
 								</p>
 								<p style="font-size: 1.1rem; line-height: 1.8; color: #374151;">
 									We believe that <strong>happy chickens taste better</strong>, and our chickens enjoy an idyllic lifestyle from the Punjab sunshine to the rich fertile soils, producing meat that's full of goodness, rich in vitamins, minerals and flavor and is vibrant in quality.
@@ -138,7 +138,7 @@
 								<div class="map-legend" style="margin-top: 20px; text-align: center;">
 									<div class="legend-item" style="display: inline-block; margin: 0 15px;">
 										<span style="display: inline-block; width: 20px; height: 20px; background-color: #e74c3c; border-radius: 50%; margin-right: 8px;"></span>
-										<span style="color: var(--theme-color); font-weight: 600;">Bhatti Farm House</span>
+										<span style="color: var(--theme-color); font-weight: 600;">S&S Farm House</span>
 									</div>
 								</div>
 							@else
@@ -148,7 +148,7 @@
 									</div>
 									<h4 style="color: var(--theme-color); font-weight: 600; margin-bottom: 15px;">Our Farm Location</h4>
 									<div style="color: #374151; line-height: 1.6;">
-										<p style="margin-bottom: 10px;"><strong>Bhatti Farm House:</strong> Lahore, Pakistan</p>
+										<p style="margin-bottom: 10px;"><strong>S&S Farm House:</strong> Lahore, Pakistan</p>
 									</div>
 									<div style="margin-top: 20px; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
 										<p style="margin: 0; color: #666; font-size: 0.9rem;">
@@ -189,7 +189,7 @@
 							</h2>
 							<div class="environment-text">
 								<p style="font-size: 1.1rem; line-height: 1.8; color: #374151; margin-bottom: 20px;">
-									Did you know that raising chickens naturally is not just good for you, but good for the planet? At Bhatti Farms, we truly care for the environment and believe in sustainable farming practices that protect our earth for future generations.
+									Did you know that raising chickens naturally is not just good for you, but good for the planet? At S&S Farms, we truly care for the environment and believe in sustainable farming practices that protect our earth for future generations.
 								</p>
 								<p style="font-size: 1.1rem; line-height: 1.8; color: #374151; margin-bottom: 20px;">
 									Our packaging is made from 100% recycled and biodegradable materials, and we use eco-friendly practices throughout our entire farming process to minimize our environmental impact.
@@ -339,11 +339,11 @@ function initFarmsMap() {
         return;
     }
 
-    // Farm location - Bhatti Farm House, Lahore, Pakistan
+    // Farm location - S&S Farm House, Lahore, Pakistan
     const farm = {
-        name: 'Bhatti Farm House',
-        lat: 31.5204, // Lahore coordinates (approximate)
-        lng: 74.3587,
+        name: 'S&S Farm House',
+        lat: 31.4426, // S&S Farms coordinates: 31°26'33.2"N 74°36'43.5"E
+        lng: 74.6121,
         color: '#e74c3c'
     };
 
