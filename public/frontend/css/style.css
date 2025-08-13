@@ -40,7 +40,7 @@
    Default css
    ====================== */
    
-* {
+   * {
 	margin: 0;
 	padding: 0;
 	outline: 0;
@@ -5858,6 +5858,7 @@ ul.errors-list li {
 	background: transparent;
 }
 
+
 /* .wishlist-component:hover {
 	background: rgba(76, 175, 80, 0.1);
 } */
@@ -7613,4 +7614,54 @@ ul.errors-list li {
 		max-height: 150px;
 		margin-left: 15px;
 	}
+}
+
+/* Remove background from wishlist-item to match surrounding area */
+.wishlist-item a {
+	background: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+/* Override hover state for wishlist-item */
+.wishlist-item:hover a {
+	background: transparent !important;
+	color: var(--theme-color) !important;
+	transform: none !important;
+	box-shadow: none !important;
+}
+
+/* Change heart icon color on hover */
+.wishlist-item:hover a i {
+	color: var(--theme-color) !important;
+}
+
+/* Shopping cart button styling - match wishlist button */
+.shopingCart a {
+	background: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+/* Override hover state for shopping cart */
+.shopingCart:hover a {
+	background: transparent !important;
+	color: var(--theme-color) !important;
+	transform: none !important;
+	box-shadow: none !important;
+}
+
+/* Change cart icon color on hover */
+.shopingCart:hover a i {
+	color: var(--theme-color) !important;
+}
+
+/* Make badges smaller for both wishlist and cart */
+.wishlist-item a .cart_count,
+.shopingCart a .cart_count {
+	width: 16px !important;
+	height: 16px !important;
+	font-size: 10px !important;
+	top: -4px !important;
+	right: -4px !important;
 }

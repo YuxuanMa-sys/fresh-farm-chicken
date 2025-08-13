@@ -5,10 +5,10 @@
 
 @section('meta-content')
 	<meta name="keywords" content="{{ $data->og_keywords }}" />
-	<meta name="description" content="{{ $data->og_description ? $data->og_description : $data->short_desc }}" />
-	<meta property="og:title" content="{{ $data->og_title ? $data->og_title : $data->title }}" />
+	<meta name="description" content="{{ removeEmojis($data->og_description ? $data->og_description : $data->short_desc) }}" />
+	<meta property="og:title" content="{{ removeEmojis($data->og_title ? $data->og_title : $data->title) }}" />
 	<meta property="og:site_name" content="{{ $gtext['site_name'] }}" />
-	<meta property="og:description" content="{{ $data->og_description ? $data->og_description : $data->short_desc }}" />
+	<meta property="og:description" content="{{ removeEmojis($data->og_description ? $data->og_description : $data->short_desc) }}" />
 	<meta property="og:type" content="article" />
 	<meta property="og:url" content="{{ url()->current() }}" />
 	<meta property="og:image" content="{{ $data->og_image ? asset('media/'.$data->og_image) : asset('media/'.$data->f_thumbnail) }}" />
@@ -23,8 +23,8 @@
 	<meta name="twitter:creator" content="{{ $gtext['twitter_id'] }}">
 	@endif
 	<meta name="twitter:url" content="{{ url()->current() }}">
-	<meta name="twitter:title" content="{{ $data->og_title ? $data->og_title : $data->title }}">
-	<meta name="twitter:description" content="{{ $data->og_description ? $data->og_description : $data->short_desc }}">
+	<meta name="twitter:title" content="{{ removeEmojis($data->og_title ? $data->og_title : $data->title) }}">
+	<meta name="twitter:description" content="{{ removeEmojis($data->og_description ? $data->og_description : $data->short_desc) }}">
 	<meta name="twitter:image" content="{{ $data->og_image ? asset('media/'.$data->og_image) : asset('media/'.$data->f_thumbnail) }}">
 @endsection
 
@@ -89,7 +89,7 @@
 					<div class="pr_details">
 						<h4 class="product_title">{{ $data->title }}</h4>
 						@if($data->short_desc != '')
-						<p>{{ $data->short_desc }}</p>
+						<p>{{ removeEmojis($data->short_desc) }}</p>
 						@endif
 						<div class="product_price">
 							@if($data->sale_price != '')
@@ -195,7 +195,7 @@
 							<!-- Description -->
 							<div id="des_description" class="tab-pane active">
 								<div class="entry">
-									{!! $data->description !!}
+									{!! removeEmojis($data->description) !!}
 								</div>
 							</div>
 							<!-- /Description/ -->

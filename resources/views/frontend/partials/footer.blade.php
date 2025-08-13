@@ -16,7 +16,9 @@ $FooterSection = FooterSection();
 							<div class="info-card">
 								@if($gtext['about_logo_footer'] != '')
 								<div class="info-logo" style="margin-bottom: 0px;">
-									<img src="{{ asset('media/'.$gtext['about_logo_footer']) }}" alt="" class="img-fluid footer-logo" />
+									<a href="{{ url('/') }}" title="{{ __('Home') }}">
+										<img src="{{ asset('media/'.$gtext['about_logo_footer']) }}" alt="" class="img-fluid footer-logo" />
+									</a>
 								</div>
 								@endif
 								@if($gtext['about_desc_footer'] != '')
@@ -94,10 +96,13 @@ $FooterSection = FooterSection();
 	<div class="footer-bottom">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-12 col-sm-6 col-md-6 col-lg-6">
+				<div class="col-12">
 					@if($gtext['is_publish_copyright'] == 1)
-					<div class="copy-right">
-						@php echo $gtext['copyright']; @endphp
+					<div class="copy-right text-center">
+						@php 
+							$copyright_text = str_replace('2024', '2025', $gtext['copyright']);
+							echo $copyright_text;
+						@endphp
 					</div>
 					@endif
 				</div>

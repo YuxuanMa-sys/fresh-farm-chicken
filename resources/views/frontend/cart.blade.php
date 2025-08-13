@@ -133,26 +133,6 @@ $gtax = getTax();
 					</div>
 				</div>
 			</div>
-			
-			<div class="row">
-				<div class="col-lg-7"></div>
-				<div class="col-lg-5 mt10">
-					<div class="carttotals-card">
-						<div class="carttotals-head">{{ __('Cart Total') }}</div>
-						<div class="carttotals-body">
-							<table class="table">
-								<tbody>
-									<tr><td><span class="title">{{ __('Price Total') }}</span><span class="price viewcart_price_total"></span></td></tr>
-									<tr><td><span class="title">{{ __('Tax') }}</span><span class="price viewcart_tax"></span></td></tr>
-									<tr><td><span class="title">{{ __('Subtotal') }}</span><span class="price viewcart_sub_total"></span></td></tr>
-									<tr><td><span class="total">{{ __('Total') }}</span><span class="total-price viewcart_total"></span></td></tr>
-								</tbody>
-							</table>
-							<a class="btn theme-btn mt10" href="{{ route('frontend.checkout') }}">{{ __('Proceed To CheckOut') }}</a>
-						</div>
-					</div>
-				</div>
-			</div>
 			@else
 			<div class="row">
 				<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 col-xl-4 offset-xl-4 col-xxl-4 offset-xxl-4">
@@ -165,6 +145,31 @@ $gtax = getTax();
 				</div>
 			</div>
 			@endif
+			
+			<!-- Always show cart totals section -->
+			<div class="row">
+				<div class="col-lg-7"></div>
+				<div class="col-lg-5 mt10">
+					<div class="carttotals-card">
+						<div class="carttotals-head">{{ __('Cart Total') }}</div>
+						<div class="carttotals-body">
+							<table class="table">
+								<tbody>
+									<tr><td><span class="title">{{ __('Price Total') }}</span><span class="price viewcart_price_total">0</span></td></tr>
+									<tr><td><span class="title">{{ __('Tax') }}</span><span class="price viewcart_tax">0</span></td></tr>
+									<tr><td><span class="title">{{ __('Subtotal') }}</span><span class="price viewcart_sub_total">0</span></td></tr>
+									<tr><td><span class="total">{{ __('Total') }}</span><span class="total-price viewcart_total">0</span></td></tr>
+								</tbody>
+							</table>
+							@if(session('shopping_cart'))
+							<a class="btn theme-btn mt10" href="{{ route('frontend.checkout') }}">{{ __('Proceed To CheckOut') }}</a>
+							@else
+							<a class="btn theme-btn mt10" href="{{ url('/') }}">{{ __('Continue Shopping') }}</a>
+							@endif
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 	<!-- /Inner Section/ -->

@@ -356,8 +356,8 @@ class ProductsController extends Controller
 		$id = $request->input('RecordId');
 		$title = esc($request->input('title'));
 		$slug = esc(str_slug($request->input('slug')));
-		$short_desc = $request->input('short_desc');
-		$description = $request->input('description');
+		$short_desc = removeEmojis($request->input('short_desc'));
+		$description = removeEmojis($request->input('description'));
 		$brand_id = $request->input('brand_id');
 		$tax_id = $request->input('tax_id');
 		$collection_id = $request->input('collection_id');
@@ -746,10 +746,10 @@ class ProductsController extends Controller
 		$res = array();
 
 		$id = $request->input('RecordId');
-		$og_title = $request->input('og_title');
+		$og_title = removeEmojis($request->input('og_title'));
 		$og_image = $request->input('og_image');
-		$og_description = $request->input('og_description');
-		$og_keywords = $request->input('og_keywords');
+		$og_description = removeEmojis($request->input('og_description'));
+		$og_keywords = removeEmojis($request->input('og_keywords'));
 
 		$data = array(
 			'og_title' => $og_title,

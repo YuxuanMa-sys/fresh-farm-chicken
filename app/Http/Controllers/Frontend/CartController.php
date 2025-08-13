@@ -78,13 +78,18 @@ class CartController extends Controller
 			
 				$items .= '<li>
 							<div class="cart-item-card">
-								<a data-id="'.$row['id'].'" id="removetocart_'.$row['id'].'" onclick="onRemoveToCart('.$row['id'].')" href="javascript:void(0);" class="item-remove"><i class="bi bi-x"></i></a>
+								<a data-id="'.$row['id'].'" id="removetocart_'.$row['id'].'" onclick="onRemoveToCart('.$row['id'].')" href="javascript:void(0);" class="item-remove" title="'.__('Remove Item').'">
+									<i class="bi bi-x-lg"></i>
+								</a>
 								<div class="cart-item-img">
-									<img src="'.$Path.'/'.$row['thumbnail'].'" alt="'.$row['name'].'" />
+									<img src="'.$Path.'/'.$row['thumbnail'].'" alt="'.$row['name'].'" loading="lazy" />
 								</div>
 								<div class="cart-item-desc">
-									<h6><a href="'.route('frontend.product', [$row['id'], str_slug($row['name'])]).'">'.$row['name'].'</a></h6>
-									<p>'.$price.'</p>
+									<h6><a href="'.route('frontend.product', [$row['id'], str_slug($row['name'])]).'" title="'.$row['name'].'">'.$row['name'].'</a></h6>
+									<p class="cart-item-price">'.$price.'</p>
+									<div class="cart-item-meta">
+										<span class="cart-item-unit">'.$row['unit'].'</span>
+									</div>
 								</div>
 							</div>
 						</li>';
@@ -97,7 +102,7 @@ class CartController extends Controller
 		$TaxCal = ($Total_Price*$taxRate)/100;
 		$tax = NumberFormat($TaxCal);
 		
-		$total = $Sub_Total+$TaxCal;
+		$total = $Total_Price + $TaxCal;
 		$GrandTotal = NumberFormat($total);
 		$discount = 0;
 		
@@ -167,7 +172,8 @@ class CartController extends Controller
 		$TaxCal = ($Total_Price*$taxRate)/100;
 		$tax = NumberFormat($TaxCal);
 		
-		$total = $SubTotal+$TaxCal;
+		// Fix: Calculate total before formatting
+		$total = $Sub_Total + $TaxCal;
 		$GrandTotal = NumberFormat($total);
 		$discount = 0;
 		

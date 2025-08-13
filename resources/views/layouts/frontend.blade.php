@@ -200,13 +200,9 @@
 		@if($gtext['cookie_title'] != '')
 		<h4 class="cookie_consent_head">{{ $gtext['cookie_title'] }} </h4>
 		@endif
-		@if($gtext['cookie_message'] != '')
-		<div class="cookie_consent_text">{{ $gtext['cookie_message'] }} 
-			@if($gtext['learn_more_text'] != '')
-			<a href="{{ $gtext['learn_more_url'] }}">{{ $gtext['learn_more_text'] }}</a>
-			@endif
+		<div class="cookie_consent_text">
+			This website uses cookies to enhance your browsing experience and provide personalized recommendations. By continuing to use our website, you agree to our use of cookies.
 		</div>
-		@endif
 		@if($gtext['button_text'] != '')
 		<button class="btn accept_btn">{{ $gtext['button_text'] }}</button>
 		@endif
