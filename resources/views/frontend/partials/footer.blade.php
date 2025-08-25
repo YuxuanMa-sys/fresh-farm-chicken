@@ -1,6 +1,6 @@
 
-@php 
-$FooterSection = FooterSection(); 
+@php
+$FooterSection = FooterSection();
 @endphp
 
 <!-- Footer Section -->
@@ -96,17 +96,17 @@ $FooterSection = FooterSection();
 	<div class="footer-bottom">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-12">
+				<div class="col-6">
 					@if($gtext['is_publish_copyright'] == 1)
-					<div class="copy-right text-center">
-						@php 
+					<div class="copy-right text-left">
+						@php
 							$copyright_text = str_replace('2024', '2025', $gtext['copyright']);
 							echo $copyright_text;
 						@endphp
 					</div>
 					@endif
 				</div>
-				<div class="col-12 col-sm-6 col-md-6 col-lg-6">
+				<div class="col-6 col-sm-6 col-md-6 col-lg-6">
 					@if($gtext['is_publish_payment'] == 1)
 					<div class="payment-method">
 						@if($gtext['payment_gateway_icon'] != '')
@@ -116,7 +116,7 @@ $FooterSection = FooterSection();
 					@endif
 				</div>
 			</div>
-		</div>	
+		</div>
 	</div>
 </footer>
 @endif

@@ -4,12 +4,11 @@
 			<img src="{{ $gtext['back_logo'] ? asset('media/'.$gtext['back_logo']) : asset('public/backend/images/backend-logo.png') }}" alt="logo">
 		</a>
 	</div>
-	<div class="version">Theme V 1.2.2</div>
 	<ul class="left-navbar">
 		@if (Auth::user()->role_id == 1)
 		<li><a href="{{ route('backend.dashboard') }}"><i class="fa fa-tachometer"></i>{{ __('Dashboard') }}</a></li>
 		<li><a href="{{ route('backend.media') }}"><i class="fa fa-picture-o"></i>{{ __('Media') }}</a></li>
-		<li><a href="{{ route('backend.page') }}"><i class="fa fa-clipboard"></i>{{ __('Pages') }}</a></li>
+		{{-- <li><a href="{{ route('backend.page') }}"><i class="fa fa-clipboard"></i>{{ __('Pages') }}</a></li> --}}
 		<li><a href="{{ route('backend.orders') }}" id="select_orders"><i class="fa fa-rocket"></i>{{ __('Orders') }}</a></li>
 		<li class="dnone"><a href="{{ route('backend.transactions') }}"><i class="fa fa-credit-card"></i>{{ __('Transactions') }}</a></li>
 		<li class="dropdown"><a class="nav-link has-dropdown" href="#" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i>{{ __('eCommerce') }}</a>
@@ -44,29 +43,31 @@
 				<li><a href="{{ route('backend.theme-options') }}">{{ __('Theme Options') }}</a></li>
 			</ul>
 		</li>
-		<li class="dropdown"><a class="nav-link has-dropdown" href="#" data-toggle="dropdown"><i class="fa fa-sitemap"></i>{{ __('Marketplace') }}</a>
+		{{-- <li class="dropdown"><a class="nav-link has-dropdown" href="#" data-toggle="dropdown"><i class="fa fa-sitemap"></i>{{ __('Marketplace') }}</a>
 			<ul class="dropdown-menu">
 				<li><a href="{{ route('backend.sellers') }}">{{ __('Sellers') }}</a></li>
 				<li><a href="{{ route('backend.withdrawals') }}">{{ __('Withdrawals') }}</a></li>
 				<li><a href="{{ route('backend.seller-settings') }}">{{ __('Settings') }}</a></li>
 			</ul>
-		</li>
+		</li> --}}
 		<li><a href="{{ route('backend.customers') }}"><i class="fa fa-users"></i>{{ __('Customers') }}</a></li>
 		<li><a href="{{ route('backend.review') }}"><i class="fa fa-recycle"></i>{{ __('Review & Ratings') }}</a></li>
 		<li><a href="{{ route('backend.contact') }}"><i class="fa fa-envelope"></i>{{ __('Contact') }}</a></li>
-		<li class="dropdown"><a class="nav-link has-dropdown" href="#" data-toggle="dropdown"><i class="fa fa-paper-plane"></i>{{ __('Newsletters') }}</a>
+
+		{{-- <li class="dropdown"><a class="nav-link has-dropdown" href="#" data-toggle="dropdown"><i class="fa fa-paper-plane"></i>{{ __('Newsletters') }}</a>
 			<ul class="dropdown-menu">
 				<li><a href="{{ route('backend.subscribers') }}">{{ __('Subscribers') }}</a></li>
 				<li><a href="{{ route('backend.subscribe-settings') }}">{{ __('Subscribe Settings') }}</a></li>
 				<li><a href="{{ route('backend.mailchimp-settings') }}">{{ __('MailChimp Settings') }}</a></li>
 			</ul>
-		</li>
-		<li class="dropdown"><a class="nav-link has-dropdown" href="#" data-toggle="dropdown"><i class="fa fa-language"></i>{{ __('Languages') }}</a>
+		</li> --}}
+
+		{{-- <li class="dropdown"><a class="nav-link has-dropdown" href="#" data-toggle="dropdown"><i class="fa fa-language"></i>{{ __('Languages') }}</a>
 			<ul class="dropdown-menu">
 				<li><a href="{{ route('backend.languages') }}">{{ __('Languages') }}</a></li>
 				<li><a href="{{ route('backend.language-keywords') }}">{{ __('Language Keywords') }}</a></li>
 			</ul>
-		</li>
+		</li> --}}
 		<li><a id="active-settings" href="{{ route('backend.general') }}"><i class="fa fa-cogs"></i>{{ __('Settings') }}</a></li>
 		<li><a href="{{ route('backend.users') }}"><i class="fa fa-user-plus"></i>{{ __('Users') }}</a></li>
 		@elseif (Auth::user()->role_id == 3)
