@@ -14,7 +14,7 @@ class ContactController extends Controller
     //get Contact Data
     public function getContactData($id, $title){
 		$contact_id = $id;
-		
+
  		$datalist = Contact::where('id', '=', $id)->get();
 		$data['title'] = '';
 		$data['contact_info'] = '';
@@ -32,7 +32,7 @@ class ContactController extends Controller
 			$data['is_recaptcha'] = $row->is_recaptcha;
 			$data['is_publish'] = $row->is_publish;
 		}
-		
+
         return view('frontend.contact', compact('contact_id', 'data'));
     }
 
@@ -40,11 +40,11 @@ class ContactController extends Controller
     public function getSimpleContactPage(){
         $data = array(
             'title' => "We'd Love to Hear From You",
-            'phone' => '+92 321 9666843',
-            'email' => 'sales@farmfreshchickenslahore.com',
+            'phone' => '+92 300 1094449',
+            'email' => 'shahraizbhatti3@gmail.com',
             			'address' => 'S&S Farms, Raiwind, Lahore'
         );
-        
+
         return view('frontend.simple-contact', compact('data'));
     }
 
@@ -54,11 +54,11 @@ class ContactController extends Controller
 		$res = array();
 
 		$is_captcha = $request->input('is_captcha');
-		
+
 		if($is_captcha == 1){
 			$secretkey = $gtext['secretkey'];
 			$recaptcha = $gtext['is_recaptcha'];
-			
+
 			if($recaptcha == 1){
 				$captcha = $request->input('g-recaptcha-response');
 				if(!$captcha){
@@ -78,7 +78,7 @@ class ContactController extends Controller
 				}
 			}
 		}
-		
+
 		$contact_id = $request->input('contact_id');
 		$contact_data = Contact::where('id', $contact_id)->first();
 		$mailSubject = $contact_data->mail_subject;
@@ -89,30 +89,30 @@ class ContactController extends Controller
 
 		$SendData = '';
 		foreach($datalist as $key => $row){
-			
+
 			if($key == 'g-recaptcha-response'){
 				continue;
 			}
-			
+
 			if($key == 'contact_id'){
 				continue;
 			}
-			
+
 			if($key == 'is_captcha'){
 				continue;
 			}
-			
+
 			$key_replace = str_replace('-',' ', $key);
 			$Name = ucwords($key_replace);
 			$Value = $row;
-			
+
 			$SendData .= "<tr><td style='padding-bottom:7px;'><strong>".$Name.": </strong>".$Value."</td></tr>";
 		}
 
 		$base_url = route('frontend.contact', [$contact_id, str_slug($title)]);
 		$site_name = $gtext['site_name'];
 		$site_title = $gtext['site_title'];
-		
+
 		if($gtext['ismail'] == 1){
 			try {
 
@@ -137,7 +137,7 @@ class ContactController extends Controller
 				$mail->isHTML(true);
 				$mail->CharSet = "utf-8";
 				$mail->Subject = $mail_subject;
-				$mail->Body = "<table style='background-color:#edf2f7;color:#111111;padding:40px 0px;line-height:24px;font-size:14px;' border='0' cellpadding='0' cellspacing='0' width='100%'>	
+				$mail->Body = "<table style='background-color:#edf2f7;color:#111111;padding:40px 0px;line-height:24px;font-size:14px;' border='0' cellpadding='0' cellspacing='0' width='100%'>
 								<tr>
 									<td>
 										<table style='background-color:#fff;max-width:600px;margin:0 auto;padding:30px;' border='0' cellpadding='0' cellspacing='0' width='100%'>
@@ -150,11 +150,11 @@ class ContactController extends Controller
 								</tr>
 							</table>";
 				$mail->send();
-				
+
 				$res['msgType'] = 'success';
 				$res['msg'] = __('Your message has been delivered');
 				return response()->json($res);
-				
+
 			} catch (Exception $e) {
 				$res['msgType'] = 'error';
 				$res['msg'] = __('Oops! Message could not be sent. Please try again.');
@@ -198,7 +198,7 @@ class ContactController extends Controller
 
         $site_name = $gtext['site_name'];
         $site_title = $gtext['site_title'];
-        
+
         if($gtext['ismail'] == 1){
             try {
                 require 'vendor/autoload.php';
@@ -221,7 +221,7 @@ class ContactController extends Controller
                 $mail->isHTML(true);
                 $mail->CharSet = "utf-8";
                 $mail->Subject = "New Contact Form Message from " . $name;
-                $mail->Body = "<table style='background-color:#edf2f7;color:#111111;padding:40px 0px;line-height:24px;font-size:14px;' border='0' cellpadding='0' cellspacing='0' width='100%'>	
+                $mail->Body = "<table style='background-color:#edf2f7;color:#111111;padding:40px 0px;line-height:24px;font-size:14px;' border='0' cellpadding='0' cellspacing='0' width='100%'>
                                 <tr>
                                     <td>
                                         <table style='background-color:#fff;max-width:600px;margin:0 auto;padding:30px;' border='0' cellpadding='0' cellspacing='0' width='100%'>
@@ -234,11 +234,11 @@ class ContactController extends Controller
                                 </tr>
                             </table>";
                 $mail->send();
-                
+
                 $res['msgType'] = 'success';
                 $res['msg'] = __('Your message has been delivered successfully!');
                 return response()->json($res);
-                
+
             } catch (Exception $e) {
                 $res['msgType'] = 'error';
                 $res['msg'] = __('Oops! Message could not be sent. Please try again.');
